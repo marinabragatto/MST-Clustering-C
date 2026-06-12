@@ -1,16 +1,11 @@
 
 #include <stdio.h>
-#include "search.h"
+#include "system.h"
 
+// executavel ./test ./exemplo
 int main(int argc, char * argv []){
-    char * dir = argv[1]; 
-
-
-    Search * se; 
-    while(se = search_read()){
-        search_print(se);
-    }
-
-
+    char * dir = argv[1];
+    printf("(%s)", dir);
+    System * sys = system_init(dir);
     return 0;
 }
