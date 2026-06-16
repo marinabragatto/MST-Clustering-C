@@ -10,19 +10,35 @@ struct SimbolTable
 };
 
 
-ST * ST_init(int maxN){}
+ST * ST_init(int maxN){
 
-void ST_PUT(Key key, Value val){}
+}
 
-Value ST_get(Key key){}
+void ST_PUT(Key key, Value val){
 
-bool ST_contains(Key key){}
+}
 
-void ST_delete(Key key){}
+Value ST_get(Key key){
 
-bool ST_empty(){}
+}
 
-int ST_size(){}
+bool ST_contains(Key key){
 
-void ST_destroy(){}
+}
+
+void ST_delete(Key key){
+
+}
+
+bool ST_empty(){
+
+}
+
+int ST_size(){
+
+}
+
+void ST_destroy(){
+    
+}
 
