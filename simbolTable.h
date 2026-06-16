@@ -8,20 +8,20 @@ typedef void * Key;
 typedef void * Value; 
 typedef struct SimbolTable ST;
 
-ST * ST_init(int maxN);
+ST * ST_init();
 
-void ST_PUT(Key key, Value val);
+ST* ST_PUT(ST * st, Key key, Value val);
 
 Value ST_get(Key key);
 
-bool ST_contains(Key key);
+bool ST_contains(ST * st, String* key);
 
 void ST_delete(Key key);
 
-bool ST_empty();
+bool ST_empty(ST* st);
 
 int ST_size();
 
-void ST_destroy();
+void ST_destroy(ST* st);
 
 #endif
