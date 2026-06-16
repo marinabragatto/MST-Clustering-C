@@ -12,16 +12,27 @@ struct System{
 };
 
 
+
+void print_char(void * s){
+    char * s_ptr = (char*)s;
+    printf("(%s)\n",s_ptr);
+}
+
 static List * read_stop_words(char * dir);
 static List * read_docs_name(char * dir);
 
 
+static char * define_directory_path(char * dir, char *);
+
 System * system_init(char * dir){
     // inicia as stop_words
-    System * sys = (System*)malloc(sizeof(System));
+    System * sys = (System*) malloc(sizeof(System));
     sys->stop_words = read_stop_words(dir);
     sys->docs_name = read_docs_name(dir);
-
+    printf("stops words");
+    list_print(sys->stop_words, print_char);
+    printf("docs name");
+    list_print(sys->docs_name, print_char);
 
     return sys;
 }
@@ -34,59 +45,87 @@ void system_execute(System * sys){
     }
 }
 void system_destroy(System * sys){
-    
+    if(sys){
+        if(sys->docs_name)
+            list_destroy(sys->docs_name, free);
+
+        if(sys->stop_words)
+            list_destroy(sys->stop_words, free);
+
+        free(sys);
+    }
 }
 
 static List * read_stop_words(char * dir){
     List * stop_words = list_create(100); // definir um valor para aqui
     
-    printf("chegue aqui\n");
-    printf("(%s)",dir);
-    
-    char * dir_name = strdup(dir);
-    strcat(dir_name, "/stopwords.txt");
-    printf("(%s)",dir_name);
+    char * sub_dir = strdup("/stopwords.txt");
+    char * dir_name =  define_directory_path(dir, sub_dir);
+    free(sub_dir);
     
     FILE * fp = fopen(dir_name,"r"); 
     if(fp == NULL){
         perror("Error, open file");
         exit(1);
     }
+
     char string[100]; // definir um valor  para aqui
     int i = 0;
+
     while(fscanf(fp,"%[^\n\t]", string) != EOF){
         fscanf(fp,"%*[\n\t]");
-        printf("(%s)\n", string);
-        list_insert(stop_words, i, string); // esse TAD list ainda está sem implementar
+
+        char * str_ptr = strdup(string);
+        
+        list_insert(stop_words, str_ptr); // esse TAD list ainda está sem implementar
         i++;
     }
+
+
+    free(dir_name);
+    fclose(fp);
 
     return stop_words;
 }
 static List * read_docs_name(char * dir){
     List * docs_name = list_create(100); // definir um valor para aqui
-    
-    printf("chegue aqui\n");
-    printf("(%s)",dir);
 
-    char * dir_name = strdup(dir);
-    strcat(dir_name, "/index.txt");
-    printf("(%s)",dir_name);
+    char * sub_dir = strdup("/index.txt");
+    char * dir_name =  define_directory_path(dir, sub_dir);
+    free(sub_dir);
     
     FILE * fp = fopen(dir_name,"r"); 
     if(fp == NULL){
         perror("Error, open file");
         exit(1);
     }
+
+
     char string[100]; // definir um valor  para aqui
     int i = 0;
     while(fscanf(fp,"%[^\n\t]", string) != EOF){
         fscanf(fp,"%*[\n\t]");
-        printf("(%s)\n", string);
-        list_insert(docs_name, i,string); // esse TAD list ainda está sem implementar
+        // printf("(%s)\n", string);
+        char * str_ptr = strdup(string);
+
+        list_insert(docs_name,str_ptr); // esse TAD list ainda está sem implementar
         i++;
     }
 
+    
+    free(dir_name);
+    fclose(fp);
+    
     return docs_name;
 }
 
+static char * define_directory_path(char * dir, char * sub_dir){
+    
+    printf("(%s)", dir);
+    int len = strlen(dir) + strlen(sub_dir) + 1;
+    char * ptr_dir = malloc(sizeof(char) * len);
+    strcpy(ptr_dir, dir);
+    strcat(ptr_dir, sub_dir);
+
+    return ptr_dir;
+}

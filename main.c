@@ -8,6 +8,8 @@ int main(int argc, char * argv []){
     printf("(%s)", dir);
     System * sys = system_init(dir);
 
+
     //destroy
+    system_destroy(sys);
     return 0;
 }

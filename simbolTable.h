@@ -2,6 +2,7 @@
 #ifndef SIMBOL_TABLE
 #define SIMBOL_TABLE
 
+#include "string.h"
 #include <stdbool.h>
 
 typedef void * Key;
