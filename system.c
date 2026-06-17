@@ -2,7 +2,8 @@
 
 #include "list.h"
 #include "search.h"
-#include <string.h>
+#include "system.h"
+#include "string.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -20,7 +21,7 @@ void print_char(void * s){
 
 static List * read_stop_words(char * dir);
 static List * read_docs_name(char * dir);
-
+static void process_docs(List * docs_name);
 
 static char * define_directory_path(char * dir, char *);
 
@@ -128,4 +129,34 @@ static char * define_directory_path(char * dir, char * sub_dir){
     strcat(ptr_dir, sub_dir);
 
     return ptr_dir;
+}
+
+static void process_docs(List * docs_name){
+    char * name;
+    
+    for(int i = 0; i < list_size(docs_name); i++){
+        // termo -> lista com documentos que contém ele
+        // termo -> lista de documentos que contém ele
+        name = list_get(docs_name, i);
+        FILE * fp = fopen(name, "r");
+        // if(){ // if lista do termo x não existe ainda, crie
+        //      // se nao pegue a lista que ja existe
+        //      // a stop word tambem precisa nao estar aqui
+
+        // }
+
+        char string[100]; // definir um valor  para aqui
+        while(fscanf(fp,"%[^\n\t]", string) != EOF){
+            fscanf(fp,"%*[\n\t]");
+            // printf("(%s)\n", string);
+        
+            String * term = string_create(string); 
+
+            list_insert( , term); // esse TAD list ainda está sem implementar
+        }
+
+
+        fclose(fp);
+
+    }
 }

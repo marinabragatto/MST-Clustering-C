@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
  struct String{
     char * c;
@@ -28,4 +29,11 @@ int string_get_len(String* string){
 
 char string_get_character(String* string, int d){
     return string->c[d];
+}
+
+void string_tolower(String * string){
+
+    for(int i = 0; i < string->len ; i++){
+        string->c[i] = tolower((unsigned char)string->c[i]);
+    }
 }

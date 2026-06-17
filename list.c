@@ -51,3 +51,14 @@ void list_print(List * list, print_func print){
    for(int i = 0; i < list->size; i++)
         print(list->data[i]);
 }
+
+void * list_get(List * list, int idx){
+    if(idx < list->size)
+        return list->data[idx];
+
+    return NULL;
+}
+
+int list_size(List * list){
+    return list->size;
+}
