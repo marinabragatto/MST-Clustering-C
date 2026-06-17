@@ -5,7 +5,7 @@
 // executavel ./test ./exemplo
 int main(int argc, char * argv []){
     char * dir = argv[1];
-    printf("(%s)", dir);
+    // printf("(%s)", dir);
     System * sys = system_init(dir);
 
 

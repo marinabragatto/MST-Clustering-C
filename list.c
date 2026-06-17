@@ -36,8 +36,10 @@ void list_destroy(List * list, destroy_func destroy){
     if(list){
         if(list->data){
             
-            for(int i = 0; i < list->size; i++)
-                destroy(list->data[i]);
+            for(int i = 0; i < list->size; i++){
+                if(destroy)
+                    destroy(list->data[i]);
+            }
 
             free(list->data);
         }
