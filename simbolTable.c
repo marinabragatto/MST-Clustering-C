@@ -4,7 +4,7 @@
 // um ST, acho que é tst?
 #include "simbolTable.h"
 #include <stdio.h>
-#include "string.h"
+//#include "string.h"
 #include <ctype.h>
 #include <stdlib.h>
 
@@ -36,23 +36,23 @@ static ST* rec_put(ST * st, String* key, Value val, int d){
     unsigned char c = string_get_character(key, d); //key deveria ser do tipo string?
     // st vazia
     if (st == NULL){ 
-        st = create_node(); 
+        st = ST_init(); 
         st->c = c;
     }
 
     int cmp = compare_character(c, st->c);
     // caso 1: menor, insere a esquerda
     if(cmp < 0){
-        st->l = rec_insert(st->l, key, val, d);
+        st->l = rec_put(st->l, key, val, d);
     }
     // caso2: maior, insere a direita
     else if(cmp > 0){
-        st->r = rec_insert(st->r, key, val, d);
+        st->r = rec_put(st->r, key, val, d);
     }
 
     //caso 3: igual (substring ja esta inserida), insere o proximo caractere
     else if(d < string_get_len(key) - 1){
-        st->m = rec_insert(st->m, key, val, d+1);
+        st->m = rec_put(st->m, key, val, d+1);
     }
     else{
         st->val = val;
@@ -64,13 +64,13 @@ ST* ST_PUT(ST * st, Key key, Value val){
     return rec_put(st, key, val, 0);
 }
 
-Value ST_get(Key key){}
+//Value ST_get(Key key){}
 
-static bool rec_search(ST* st, String* key, int d){
+static Value rec_search(ST* st, String* key, int d){
     // st vazia
     if(st == NULL){
         //return NULL;
-        return false;
+        return NULL;
     }
     unsigned char c = string_get_character(key, d);
     int cmp = compare_character(c, st->c);
@@ -86,20 +86,22 @@ static bool rec_search(ST* st, String* key, int d){
     else if (d < string_get_len(key) - 1){
         return rec_search(st->m, key, d+1);
     } 
-    //else { return t; }
+    else {
+        return st->val;
+    }
 }
 
-bool ST_contains(ST * st, String * key){
+Value ST_get(ST * st, String * key){
     return rec_search(st, key, 0);
 }
 
-void ST_delete(Key key){} // vai precisar remover chave?
+//void ST_delete(Key key){} // vai precisar remover chave?
 
 bool ST_empty(ST* st){
     return st == NULL;
 }
 
-int ST_size(){}
+//int ST_size(){}
 
 void ST_destroy(ST* st){
     if(st != NULL){

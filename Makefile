@@ -23,7 +23,7 @@ simbolTable.o: simbolTable.c
 	gcc -c simbolTable.c
 
 string.o: string.c
-	gcc -c strin.c
+	gcc -c string.c
 
 system.o: system.c	
 	gcc -c system.c

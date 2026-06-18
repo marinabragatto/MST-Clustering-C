@@ -3,6 +3,7 @@
 #define SIMBOL_TABLE
 
 #include <stdbool.h>
+#include "string.h"
 
 typedef void * Key;
 typedef void * Value; 
@@ -12,15 +13,15 @@ ST * ST_init();
 
 ST* ST_PUT(ST * st, Key key, Value val);
 
-Value ST_get(Key key);
+//Value ST_get(Key key);
 
-bool ST_contains(ST * st, String* key);
+Value ST_get(ST * st, String* key);
 
-void ST_delete(Key key);
+//void ST_delete(Key key);
 
 bool ST_empty(ST* st);
 
-int ST_size();
+//int ST_size();
 
 void ST_destroy(ST* st);
 
