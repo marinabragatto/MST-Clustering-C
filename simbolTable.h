@@ -13,7 +13,7 @@ ST * ST_init();
 
 ST* ST_PUT(ST * st, Key key, Value val);
 
-Value ST_get(Key key);
+Value ST_get(ST * st,Key key);
 
 bool ST_contains(ST * st, String* key);
 

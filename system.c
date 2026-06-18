@@ -1,21 +1,25 @@
 #include "system.h"
 
-#include "list.h"
+#include "vector.h"
 #include "search.h"
 #include "simbolTable.h"
 #include "system.h"
+#include "graph.h"
 #include "string.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
+#define STRING_SZ 200  // definir um valor para aqui
+#define VECTOR_SZ 200  // definir um valor para aqui
+
 struct System{
-    List * stop_words; // colocar aqui ou no indexador? // as stop words devem ser outra simbol table? para dado uma word, retornar se ela deve ser considerada ou nao? ou só uma lista mesmo?
-    List * docs_name; // Conjunto de páginas na web 
+    Vector * stop_words; // colocar aqui ou no indexador? // as stop words devem ser outra simbol table? para dado uma word, retornar se ela deve ser considerada ou nao? ou só uma lista mesmo?
     ST * term_list; // lista de dado um termo, em quais paginas ele está
     // Qual estrura vai guardar os links entre páginas?
     // Poderia ser uma ST para o IN de cada pagina 
     // E outra ST para o out de cada pagina ---> perguntar para o professor!
+    Graph * page_links; // mapeia um string em outras strings!
 };
 
 
@@ -25,23 +29,28 @@ void print_char(void * s){
     printf("(%s)\n",s_ptr);
 }
 
-static List * read_stop_words(char * dir);
-static List * read_docs_name(char * dir);
-static ST * process_docs(List * docs_name, char * dir);
+// Colocar todos esses reads em um TAD ioread.c/.h depois para organizar leituras da entrada padrao
+static Vector * read_stop_words(char * dir);
+static ST * read_terms(char * dir);
+static void read_page(String * page_name, char * dir, ST * term_list);
+static Graph * read_page_links(char * dir);
 
-static char * define_directory_path(char * dir, char * sub_dir);
+static char * define_directory_path(char * dir, const char * sub_dir);
 
 System * system_init(char * dir){
-    // inicia as stop_words
     System * sys = (System*) malloc(sizeof(System));
-    sys->stop_words = read_stop_words(dir);
-    sys->docs_name = read_docs_name(dir);
-    printf("stop words\n");
-    list_print(sys->stop_words, print_char);
-    printf("docs name\n");
-    list_print(sys->docs_name, string_print);
 
-    sys->term_list = process_docs(sys->docs_name, dir);
+    sys->stop_words = read_stop_words(dir);
+    /*debug*/
+    printf("stop words\n");
+    vector_print(sys->stop_words, string_print);
+    printf("stop words END\n");
+    /*debug*/
+    
+    sys->term_list = read_terms(dir); /*debug esta dentro das funcoes*/
+
+    sys->page_links  = read_page_links(dir); 
+
     return sys;
 }
 
@@ -54,80 +63,78 @@ void system_execute(System * sys){
 }
 void system_destroy(System * sys){
     if(sys){
-        if(sys->docs_name)
-            list_destroy(sys->docs_name, string_destroy);
+        if(sys->page_links)
+            graph_destroy(sys->page_links);
+
+        if(sys->term_list)
+            ST_destroy(sys->term_list);
 
         if(sys->stop_words)
-            list_destroy(sys->stop_words, free);
+            vector_destroy(sys->stop_words, string_destroy);
 
         free(sys);
     }
 }
 
-static List * read_stop_words(char * dir){
-    List * stop_words = list_create(100); // definir um valor para aqui
+static Vector * read_stop_words(char * dir){
+    // nossa stopword vai ser uma Simbol Table (hash)
+    Vector * stop_words = vector_create(VECTOR_SZ);
     
-    char * sub_dir = strdup("/stopwords.txt");
-    char * dir_name =  define_directory_path(dir, sub_dir);
-    free(sub_dir);
-    
+    char * dir_name =  define_directory_path(dir, "/stopwords.txt");
+    print_char(dir_name);
     FILE * fp = fopen(dir_name,"r"); 
     if(fp == NULL){
         perror("Error, open file");
         exit(1);
     }
+    free(dir_name);
 
-    char string[100]; // definir um valor  para aqui
+    char string[STRING_SZ];
     int i = 0;
 
     while(fscanf(fp,"%[^\n\t]", string) != EOF){
         fscanf(fp,"%*[\n\t]");
-
-        char * str_ptr = strdup(string);
-        // acho que tem que colocar no tipo string aqui
-        list_insert(stop_words, str_ptr); // esse TAD list ainda está sem implementar
+        String * str_ptr = string_create(string);
+        vector_insert(stop_words, str_ptr);
         i++;
     }
 
 
-    free(dir_name);
     fclose(fp);
 
     return stop_words;
 }
-static List * read_docs_name(char * dir){
-    List * docs_name = list_create(100); // definir um valor para aqui
+static ST * read_terms(char * dir){
+    ST * term_list = ST_init();
 
-    char * sub_dir = strdup("/index.txt");
-    char * dir_name =  define_directory_path(dir, sub_dir);
-    free(sub_dir);
+    char * dir_name =  define_directory_path(dir, "/index.txt");
     
-    FILE * fp = fopen(dir_name,"r"); 
+    FILE * fp = fopen(dir_name,"r");
+    free(dir_name);
+
     if(fp == NULL){
         perror("Error, open file");
         exit(1);
     }
 
-
-    char string[100]; // definir um valor  para aqui
+    char string[STRING_SZ];
     int i = 0;
     while(fscanf(fp,"%[^\n\t]", string) != EOF){
         fscanf(fp,"%*[\n\t]");
-        // printf("(%s)\n", string);
-        String * str_ptr = string_create(string);
-
-        list_insert(docs_name,str_ptr); // esse TAD list ainda está sem implementar
+        String * page_name = string_create(string);
+        printf("PAGE NAME : ");
+        string_print(page_name);
+        read_page(page_name, dir, term_list);
+        string_destroy(page_name);
         i++;
     }
 
-    
-    free(dir_name);
     fclose(fp);
     
-    return docs_name;
+    return term_list;
 }
 
-static char * define_directory_path(char * dir, char * sub_dir){
+static char * define_directory_path(char * dir, const char * sub_dir){
     
     // printf("(%s)", dir);
     int len = strlen(dir) + strlen(sub_dir) + 1;
@@ -138,60 +145,105 @@ static char * define_directory_path(char * dir, char * sub_dir){
     return ptr_dir;
 }
 
-static ST * process_docs(List * docs_name, char * dir){
+static void read_page(String * page_name, char * dir, ST * term_list){
 
     // !!!!!!!!!!!! Essa função já tá lendo os termos de todos os arquivos, falta agora
     // fazer com que ela coloque eles na ST seguindo as condições
-    String * name;
-    printf("\n\n\n\nPROCESS DOCS!!!!!!!!!!!!!\n\n\n\n");
     
-    for(int i = 0; i < list_size(docs_name); i++){
-        // termo -> lista com documentos que contém ele
-        // termo -> lista de documentos que contém ele
-        name = list_get(docs_name, i);
-        string_print(name);
+    // termo -> Vector com documentos que contém ele
+    // termo -> Vector de documentos que contém ele
+    
+    char * tmp =  define_directory_path(dir, "/pages/");
+    char * file_path = define_directory_path(tmp, string_get_character(page_name,0));
+    free(tmp);
+
+    print_char(file_path);
+    FILE * fp = fopen(file_path, "r");
+    if(fp == NULL){
+        perror("Error, open file");
+        exit(1);
+    }
+    free(file_path);
+    
+
+    char string[STRING_SZ];
+    while(fscanf(fp,"%[^\n\t ]", string) != EOF){
+        fscanf(fp,"%*[\n\t ]");
+        // printf("(%s)\n", string);
+        String * term = string_create(string); 
+        string_tolower(term);
+        string_print(term);
+        string_destroy(term); // nao vai
+        Vector * vet_term_docs = NULL;
+        // ***** tem que verificar se o documento ja nao esta na lista de documentos *****
+        // ***** tem que verificar se o termo é uma stop word *****
+        if(vet_term_docs = ST_get(term_list, term)){
+            // se o termo já tem um vetor associado a ele
+            // pega esse vetor e insere mais um documento na lista de documentos
+            // mas pode ser que o documento já esteja associado a esse termo, COMO TRATAR ISSO?
+            if(vet_term_docs) // ****  deixar so enquanto a ST nao funciona **** 
+                vector_insert(vet_term_docs, page_name); // insere o documento cmo associado ao termo
+
+        }
+        else {
+            // cria um vetor de documentos novo
+            vet_term_docs = vector_create(VECTOR_SZ);
+            vector_insert(vet_term_docs, page_name); // insere o documento cmo associado ao termo
+            
+            ST_PUT(term_list, term, vet_term_docs);
+        }
+       
+        vector_destroy(vet_term_docs, NULL);
+    }
+    
+    fclose(fp);
+
+}
+
+static Graph * read_page_links(char * dir){
+    printf("\n\n\nPAGE LINKS:\n\n\n");
+
+    Graph * page_links = graph_create();
+
+    char * file_path =  define_directory_path(dir, "/graph.txt");
+
+    FILE * fp = fopen(file_path, "r");
+    if(fp == NULL){
+        perror("Error, open file");
+        exit(1);
+    }
+    free(file_path);
+    
+    char string[STRING_SZ]; 
+    
+    while(fscanf(fp,"%[^\n\t ]", string) != EOF){
+        fscanf(fp,"%*[\n\t ]");
+        String * vertex = string_create(string); // nome do arquivo (vertice)
         
-        char * sub_dir = strdup("/pages/");
-        char * dir_name =  define_directory_path(dir, sub_dir);
-        free(sub_dir);
-        char * file_path = define_directory_path(dir_name, string_get_character(name,0));
-        free(dir_name);
+        int n; // numero de elementos associados
+        fscanf(fp,"%d", &n);
+        fscanf(fp,"%*[ ]");
+        // printf("int n : %d\n", n);
 
-        print_char(file_path);
-        FILE * fp = fopen(file_path, "r");
-        free(file_path);
-        
+        Vector * adj_list =  vector_create(n);
+        for(int i = 0 ; i < n; i++){
+            fscanf(fp,"%[^ \n\t]", string);
+            // printf("\tadj list : (%s)\n", string);
+            fscanf(fp,"%*[ \n\t]");
 
-        char string[100]; // definir um valor  para aqui
-        while(fscanf(fp,"%[^\n\t ]", string) != EOF){
-            fscanf(fp,"%*[\n\t ]");
-            // printf("(%s)\n", string);
-            String * term = string_create(string); 
-            string_tolower(term);
-            string_print(term);
-            string_destroy(term);
-
-            // if(){ // if lista do termo x não existe ainda, crie
-            //      // se nao pegue a lista que ja existe
-            //      // a stop word tambem precisa nao estar aqui
-
-            // }
-
-            // coloquei por enquanto para criar sempre, só para testar
-            // o outro seria um get na ST 
-            List * list_term_docs = list_create(100); // lista de docs que contem o termo
-            list_insert(list_term_docs, name); // esse TAD list ainda está sem implementar
-              //inserir a lista na ST!
-
-            // como nao estamos inserindo ainda, vou liberar memoria aqui
-            list_destroy(list_term_docs, NULL);
+            String * adj_vertex = string_create(string); // nome do arquivo adjacentes ao vertex 
+            vector_insert(adj_list, adj_vertex); // precisaria armanezar o tamanho de cada lista
         }
 
-      
-        fclose(fp);
+        fscanf(fp,"%*[ \n\t]");
 
+        vector_destroy(adj_list, string_destroy);
+        string_destroy(vertex);
+
+    
     }
-
+    
+    fclose(fp);
 
     return NULL;
 }

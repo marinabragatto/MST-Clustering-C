@@ -21,7 +21,7 @@ struct SimbolTable{
 
 
 ST * ST_init(){
-  
+    return NULL;
 }
 
 // essa funcao deveria ir pro tad string?
@@ -34,10 +34,11 @@ static ST* rec_put(ST * st, String* key, Value val, int d){
 }
 
 ST* ST_PUT(ST * st, Key key, Value val){
+    return NULL;
 }
 
-Value ST_get(Key key){
-
+Value ST_get(ST * st ,Key key){
+    return NULL;
 }
 
 static bool rec_search(ST* st, String* key, int d){

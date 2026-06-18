@@ -7,7 +7,7 @@ int main(int argc, char * argv []){
     char * dir = argv[1];
     // printf("(%s)", dir);
     System * sys = system_init(dir);
-
+    
 
     //destroy
     system_destroy(sys);
