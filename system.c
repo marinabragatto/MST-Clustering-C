@@ -4,7 +4,6 @@
 #include "search.h"
 #include "simbolTable.h"
 #include "system.h"
-#include "graph.h"
 #include "string.h"
 #include <string.h>
 #include <stdio.h>
@@ -19,7 +18,7 @@ struct System{
     // Qual estrura vai guardar os links entre páginas?
     // Poderia ser uma ST para o IN de cada pagina 
     // E outra ST para o out de cada pagina ---> perguntar para o professor!
-    Graph * page_links; // mapeia um string em outras strings!
+    ST * page_links; // mapeia um string em outras strings!
 };
 
 
@@ -31,9 +30,9 @@ void print_char(void * s){
 
 // Colocar todos esses reads em um TAD ioread.c/.h depois para organizar leituras da entrada padrao
 static Vector * read_stop_words(char * dir);
-static ST * read_terms(char * dir);
-static void read_page(String * page_name, char * dir, ST * term_list);
-static Graph * read_page_links(char * dir);
+static ST * read_terms(char * dir, Vector * stop_words);
+static void read_page(String * page_name, char * dir, Vector * stop_words, ST * term_list);
+static ST * read_page_links(char * dir);
 
 static char * define_directory_path(char * dir, const char * sub_dir);
 
@@ -47,9 +46,9 @@ System * system_init(char * dir){
     printf("stop words END\n");
     /*debug*/
     
-    sys->term_list = read_terms(dir); /*debug esta dentro das funcoes*/
+    sys->term_list = read_terms(dir, sys->stop_words); /*debug esta dentro das funcoes*/
 
-    sys->page_links  = read_page_links(dir); 
+    sys->page_links  = read_page_links(dir); /*debug esta dentro das funcoes*/
 
     return sys;
 }
@@ -64,7 +63,7 @@ void system_execute(System * sys){
 void system_destroy(System * sys){
     if(sys){
         if(sys->page_links)
-            graph_destroy(sys->page_links);
+            ST_destroy(sys->page_links);
 
         if(sys->term_list)
             ST_destroy(sys->term_list);
@@ -104,7 +103,7 @@ static Vector * read_stop_words(char * dir){
 
     return stop_words;
 }
-static ST * read_terms(char * dir){
+static ST * read_terms(char * dir,  Vector * stop_words){
     ST * term_list = ST_init();
 
     char * dir_name =  define_directory_path(dir, "/index.txt");
@@ -124,7 +123,7 @@ static ST * read_terms(char * dir){
         String * page_name = string_create(string);
         printf("PAGE NAME : ");
         string_print(page_name);
-        read_page(page_name, dir, term_list);
+        read_page(page_name, dir, stop_words, term_list);
         string_destroy(page_name);
         i++;
     }
@@ -136,7 +135,6 @@ static ST * read_terms(char * dir){
 
 static char * define_directory_path(char * dir, const char * sub_dir){
     
-    // printf("(%s)", dir);
     int len = strlen(dir) + strlen(sub_dir) + 1;
     char * ptr_dir = malloc(sizeof(char) * len);
     strcpy(ptr_dir, dir);
@@ -145,7 +143,7 @@ static char * define_directory_path(char * dir, const char * sub_dir){
     return ptr_dir;
 }
 
-static void read_page(String * page_name, char * dir, ST * term_list){
+static void read_page(String * page_name, char * dir, Vector * stop_words, ST * term_list){
 
     // !!!!!!!!!!!! Essa função já tá lendo os termos de todos os arquivos, falta agora
     // fazer com que ela coloque eles na ST seguindo as condições
@@ -177,6 +175,7 @@ static void read_page(String * page_name, char * dir, ST * term_list){
         Vector * vet_term_docs = NULL;
         // ***** tem que verificar se o documento ja nao esta na lista de documentos *****
         // ***** tem que verificar se o termo é uma stop word *****
+        // var stop_words
         if(vet_term_docs = ST_get(term_list, term)){
             // se o termo já tem um vetor associado a ele
             // pega esse vetor e insere mais um documento na lista de documentos
@@ -200,10 +199,10 @@ static void read_page(String * page_name, char * dir, ST * term_list){
 
 }
 
-static Graph * read_page_links(char * dir){
+static ST * read_page_links(char * dir){
     printf("\n\n\nPAGE LINKS:\n\n\n");
 
-    Graph * page_links = graph_create();
+    ST * page_links = ST_init();
 
     char * file_path =  define_directory_path(dir, "/graph.txt");
 
@@ -235,15 +234,15 @@ static Graph * read_page_links(char * dir){
             vector_insert(adj_list, adj_vertex); // precisaria armanezar o tamanho de cada lista
         }
 
+        ST_PUT(page_links, vertex, adj_list);
+
         fscanf(fp,"%*[ \n\t]");
 
         vector_destroy(adj_list, string_destroy);
         string_destroy(vertex);
-
-    
     }
     
     fclose(fp);
 
-    return NULL;
+    return page_links;
 }
