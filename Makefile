@@ -1,4 +1,4 @@
-objects := indexador.o list.o main.o search.o simbolTable.o string.o system.o
+objects := indexador.o list.o main.o search.o simbolTable.o string.o system.o hash.o
 
 all: $(objects)
 	gcc -o trab2 $^
@@ -27,6 +27,12 @@ string.o: string.c
 
 system.o: system.c	
 	gcc -c system.c
+
+hash.o: hash.c
+	gcc -c hash.c
+	
+linkedList.o: linkedList.c
+	gcc -c linkedList.c
 	
 clean:
 	rm -f *.o trab2 teste
