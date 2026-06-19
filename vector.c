@@ -6,17 +6,19 @@
 struct Vector{
     void ** data;
     int size;
+    destroy_func destroy;
     int max;
 };
 
 
 
-Vector * vector_create(int max_size){
+Vector * vector_create(int max_size, destroy_func destroy){
     Vector * vet = (Vector *)malloc(sizeof(Vector));
 
     vet->data = (void**)calloc(max_size, sizeof(void*));
     vet->size = 0;
     vet->max = max_size;
+    vet->destroy = destroy;
 
     return vet;
 }
@@ -32,19 +34,21 @@ void vector_insert(Vector * vet, void * element){
 
 }
 
-void vector_destroy(Vector * vet, destroy_func destroy){
-    if(vet){
-        if(vet->data){
+void vector_destroy(void * vet){
+    Vector * vet_ptr = (Vector*)vet;
+    
+    if(vet_ptr){
+        if(vet_ptr->data){
             
-            for(int i = 0; i < vet->size; i++){
-                if(destroy)
-                    destroy(vet->data[i]);
+            for(int i = 0; i < vet_ptr->size; i++){
+                if(vet_ptr->destroy)
+                    vet_ptr->destroy(vet_ptr->data[i]);
             }
 
-            free(vet->data);
+            free(vet_ptr->data);
         }
 
-        free(vet);
+        free(vet_ptr);
     }
 }
 
@@ -63,4 +67,10 @@ void * vector_get(Vector * vet, int idx){
 
 int vector_size(Vector * vet){
     return vet->size;
+}
+
+void * vector_get_last(Vector * vet){
+    if (vet->size > 0)
+        return vet->data[vet->size - 1];
+    return NULL;
 }

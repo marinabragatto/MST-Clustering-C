@@ -13,12 +13,9 @@
 #define VECTOR_SZ 200  // definir um valor para aqui
 
 struct System{
-    Vector * stop_words; // colocar aqui ou no indexador? // as stop words devem ser outra simbol table? para dado uma word, retornar se ela deve ser considerada ou nao? ou só uma lista mesmo?
-    ST * term_list; // lista de dado um termo, em quais paginas ele está
-    // Qual estrura vai guardar os links entre páginas?
-    // Poderia ser uma ST para o IN de cada pagina 
-    // E outra ST para o out de cada pagina ---> perguntar para o professor!
-    ST * page_links; // mapeia um string em outras strings!
+    Vector * stop_words; // COLOCAR TIPO HASH!
+    ST * term_list; // termo -> lista de docs que ele aparece
+    ST * page_links; // mapeia um string em outras strings! Dado uma pagina, para quem ela aponta
 };
 
 
@@ -34,6 +31,7 @@ static ST * read_terms(char * dir, Vector * stop_words);
 static void read_page(String * page_name, char * dir, Vector * stop_words, ST * term_list);
 static ST * read_page_links(char * dir);
 
+// statics de verdade
 static char * define_directory_path(char * dir, const char * sub_dir);
 
 System * system_init(char * dir){
@@ -45,7 +43,7 @@ System * system_init(char * dir){
     vector_print(sys->stop_words, string_print);
     printf("stop words END\n");
     /*debug*/
-    
+
     sys->term_list = read_terms(dir, sys->stop_words); /*debug esta dentro das funcoes*/
 
     sys->page_links  = read_page_links(dir); /*debug esta dentro das funcoes*/
@@ -58,18 +56,28 @@ void system_execute(System * sys){
     Search * se; 
     while(se = search_read()){
         search_print(se);
+        
+        // if(search_get_word(se)  != nao eh uma stop word)  //
+
+        // verificar aqui se para cada termo da search, ele ta no documento X 
+        // sys->term_list 
+        // usar essa var para conferir
+        // fazer looping buscando
     }
+
+    /// depois teria que ordenar aqui com base no page rank de alguma forma
+    // vai ter uma funcao que dado uma pagina computa o page rank dela, talvez vale a pena computar uma vez só e armazenar para nao ficar fazendo de novo toda vez. 
 }
 void system_destroy(System * sys){
     if(sys){
         if(sys->page_links)
-            ST_destroy(sys->page_links);
+            ST_destroy(sys->page_links, vector_destroy);
 
         if(sys->term_list)
-            ST_destroy(sys->term_list);
+            ST_destroy(sys->term_list, vector_destroy);
 
         if(sys->stop_words)
-            vector_destroy(sys->stop_words, string_destroy);
+            vector_destroy(sys->stop_words);
 
         free(sys);
     }
@@ -77,7 +85,7 @@ void system_destroy(System * sys){
 
 static Vector * read_stop_words(char * dir){
     // nossa stopword vai ser uma Simbol Table (hash)
-    Vector * stop_words = vector_create(VECTOR_SZ);
+    Vector * stop_words = vector_create(VECTOR_SZ, string_destroy);
     
     char * dir_name =  define_directory_path(dir, "/stopwords.txt");
     print_char(dir_name);
@@ -124,7 +132,7 @@ static ST * read_terms(char * dir,  Vector * stop_words){
         printf("PAGE NAME : ");
         string_print(page_name);
         read_page(page_name, dir, stop_words, term_list);
-        string_destroy(page_name);
+        // string_destroy(page_name);
         i++;
     }
 
@@ -152,7 +160,7 @@ static void read_page(String * page_name, char * dir, Vector * stop_words, ST * 
     // termo -> Vector de documentos que contém ele
     
     char * tmp =  define_directory_path(dir, "/pages/");
-    char * file_path = define_directory_path(tmp, string_get_character(page_name,0));
+    char * file_path = define_directory_path(tmp, string_get_char_pointer(page_name,0));
     free(tmp);
 
     print_char(file_path);
@@ -171,28 +179,27 @@ static void read_page(String * page_name, char * dir, Vector * stop_words, ST * 
         String * term = string_create(string); 
         string_tolower(term);
         string_print(term);
-        string_destroy(term); // nao vai
-        Vector * vet_term_docs = NULL;
-        // ***** tem que verificar se o documento ja nao esta na lista de documentos *****
-        // ***** tem que verificar se o termo é uma stop word *****
-        // var stop_words
-        if(vet_term_docs = ST_get(term_list, term)){
-            // se o termo já tem um vetor associado a ele
-            // pega esse vetor e insere mais um documento na lista de documentos
-            // mas pode ser que o documento já esteja associado a esse termo, COMO TRATAR ISSO?
-            if(vet_term_docs) // ****  deixar so enquanto a ST nao funciona **** 
-                vector_insert(vet_term_docs, page_name); // insere o documento cmo associado ao termo
 
+        Vector * vet_term_docs = NULL;
+
+        // ***** tem que verificar se o termo é uma stop word *****
+        if(1){ // esse if é para verificar se é uma stop word
+            if(vet_term_docs = ST_get(term_list, term)){
+                String * last_page_name = vector_get_last(vet_term_docs);
+                if(last_page_name != NULL){
+                    if(compare(page_name,last_page_name) != 0){ // Nao eh igual
+                        vector_insert(vet_term_docs, page_name); // insere o documento cmo associado ao termo
+                    }
+                }
+            }
+            else {
+                // cria um vetor de documentos novo
+                vet_term_docs = vector_create(VECTOR_SZ, NULL);
+                vector_insert(vet_term_docs, page_name); // insere o documento cmo associado ao termo
+                ST_PUT(term_list, term, vet_term_docs);
+            }
         }
-        else {
-            // cria um vetor de documentos novo
-            vet_term_docs = vector_create(VECTOR_SZ);
-            vector_insert(vet_term_docs, page_name); // insere o documento cmo associado ao termo
-            
-            ST_PUT(term_list, term, vet_term_docs);
-        }
-       
-        vector_destroy(vet_term_docs, NULL);
+        string_destroy(term);
     }
     
     fclose(fp);
@@ -224,7 +231,7 @@ static ST * read_page_links(char * dir){
         fscanf(fp,"%*[ ]");
         // printf("int n : %d\n", n);
 
-        Vector * adj_list =  vector_create(n);
+        Vector * adj_list =  vector_create(n, string_destroy);
         for(int i = 0 ; i < n; i++){
             fscanf(fp,"%[^ \n\t]", string);
             // printf("\tadj list : (%s)\n", string);
@@ -238,7 +245,7 @@ static ST * read_page_links(char * dir){
 
         fscanf(fp,"%*[ \n\t]");
 
-        vector_destroy(adj_list, string_destroy);
+        // vector_destroy(adj_list);
         string_destroy(vertex);
     }
     

@@ -1,17 +1,15 @@
-objects := indexador.o list.o main.o search.o simbolTable.o string.o system.o hash.o
+objects := vector.o main.o search.o simbolTable.o string.o system.o 
 
 all: $(objects)
 	gcc -o trab2 $^
 
-sources := indexador.c list.c main.c search.c simbolTable.c string.c system.c
+sources := vector.c main.c search.c simbolTable.c string.c system.c
 debug: $(sources)
 	gcc -o teste $^ -g
 
-indexador.o : indexador.c
-	gcc -c indexador.c
 
-list.o: list.c
-	gcc -c list.c
+vector.o: vector.c
+	gcc -c vector.c
 
 main.o: main.c
 	gcc -c main.c
@@ -28,8 +26,6 @@ string.o: string.c
 system.o: system.c	
 	gcc -c system.c
 
-hash.o: hash.c
-	gcc -c hash.c
 	
 linkedList.o: linkedList.c
 	gcc -c linkedList.c

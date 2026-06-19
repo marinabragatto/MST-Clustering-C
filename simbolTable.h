@@ -2,7 +2,6 @@
 #ifndef SIMBOL_TABLE
 #define SIMBOL_TABLE
 
-#include "string.h"
 #include <stdbool.h>
 #include "string.h"
 
@@ -10,15 +9,13 @@ typedef void * Key;
 typedef void * Value; 
 typedef struct SimbolTable ST;
 
+typedef void (*destroy_func)(void *); 
+
 ST * ST_init();
 
-ST* ST_PUT(ST * st, Key key, Value val);
+void ST_PUT(ST * st, Key key, Value val);
 
-<<<<<<< HEAD
-Value ST_get(ST * st,Key key);
-=======
 //Value ST_get(Key key);
->>>>>>> origin/fabiola
 
 Value ST_get(ST * st, String* key);
 
@@ -28,6 +25,6 @@ bool ST_empty(ST* st);
 
 //int ST_size();
 
-void ST_destroy(ST* st);
+void ST_destroy(ST* st, destroy_func destroy);
 
 #endif

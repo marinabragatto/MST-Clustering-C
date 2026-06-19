@@ -26,7 +26,7 @@ static uint32_t horner(String* string, int size){ // size eh da hash
 	uint32_t h = 0;
 	int len = string_get_len(string);
 	for (int i = 0; i < len; i++) {
-		h = (251*h + string_get_character(string, i)) % size;
+		h = (251*h + string_get_char_pointer(string, i)) % size;
 	}
 	return h;
 }
