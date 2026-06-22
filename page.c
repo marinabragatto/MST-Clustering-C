@@ -68,3 +68,8 @@ void print_page(Page * page){
     printf("\n");
 
 }
+
+void print_page_v2(Page * page){
+    printf("Page name:");
+    string_print(page->name);
+}

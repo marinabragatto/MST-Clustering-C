@@ -40,7 +40,7 @@ String * search_get_word(Search * se){
 }
 
 void search_print(Search * se){
-    printf("(");
+    printf("(\nsearch");
     string_print(se->string);
     printf(")");
 }
