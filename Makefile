@@ -1,9 +1,9 @@
-objects := vector.o main.o search.o simbolTable.o string.o system.o 
+objects := vector.o main.o search.o simbolTable.o string.o system.o page.o
 
 all: $(objects)
 	gcc -o trab2 $^
 
-sources := vector.c main.c search.c simbolTable.c string.c system.c
+sources := vector.c main.c search.c simbolTable.c string.c system.c page.c
 debug: $(sources)
 	gcc -o teste $^ -g
 
@@ -26,9 +26,11 @@ string.o: string.c
 system.o: system.c	
 	gcc -c system.c
 
-	
 linkedList.o: linkedList.c
 	gcc -c linkedList.c
-	
+
+page.o: page.c	
+	gcc -c page.c
+
 clean:
 	rm -f *.o trab2 teste

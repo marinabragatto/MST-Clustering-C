@@ -5,6 +5,8 @@
 #include "simbolTable.h"
 #include "system.h"
 #include "string.h"
+#include "page.h"
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,7 +17,10 @@
 struct System{
     Vector * stop_words; // COLOCAR TIPO HASH!
     ST * term_list; // termo -> lista de docs que ele aparece
-    ST * page_links; // mapeia um string em outras strings! Dado uma pagina, para quem ela aponta
+    // ST * page_links; // mapeia um string em outras strings! Dado uma pagina, para quem ela aponta
+    
+    ST * page_idx_vector;
+    Vector * pages;
 };
 
 
@@ -27,12 +32,16 @@ void print_char(void * s){
 
 // Colocar todos esses reads em um TAD ioread.c/.h depois para organizar leituras da entrada padrao
 static Vector * read_stop_words(char * dir);
-static ST * read_terms(char * dir, Vector * stop_words);
+// static Vector * read_pages(char * dir);
+static ST * read_terms(char * dir,  Vector * pages, Vector * stop_words);
 static void read_page(String * page_name, char * dir, Vector * stop_words, ST * term_list);
-static ST * read_page_links(char * dir);
+static void read_page_links(char * dir, Vector * pages, ST * page_idx_vector);
 
 // statics de verdade
 static char * define_directory_path(char * dir, const char * sub_dir);
+static void read_pages(System * sys, char * dir);
+void print_pages(System * sys);
+
 
 System * system_init(char * dir){
     System * sys = (System*) malloc(sizeof(System));
@@ -42,14 +51,71 @@ System * system_init(char * dir){
     printf("stop words\n");
     vector_print(sys->stop_words, string_print);
     printf("stop words END\n");
-    /*debug*/
+    /*debug*/ 
 
-    sys->term_list = read_terms(dir, sys->stop_words); /*debug esta dentro das funcoes*/
+    read_pages(sys, dir);
+    print_pages(sys) ; // teste debug
+        // ST * page_idx_vector;
+    // Vector * pages;
 
-    sys->page_links  = read_page_links(dir); /*debug esta dentro das funcoes*/
+    sys->term_list = read_terms(dir, sys->pages, sys->stop_words); /*debug esta dentro das funcoes*/
+
+    // sys->page_links = NULL;
+
+    read_page_links(dir, sys->pages, sys->page_idx_vector); /*debug esta dentro das funcoes*/
+    print_pages(sys) ; // teste debug
 
     return sys;
 }
+
+void print_pages(System * sys){
+    for(int i = 0; i < vector_size(sys->pages) ; i++){
+        // ST_get(sys->page_idx_vector, )
+        print_page(vector_get(sys->pages, i));
+
+    }
+}
+
+static void read_pages(System * sys, char * dir){
+    
+    sys->pages = vector_create(VECTOR_SZ, page_destroy);
+    sys->page_idx_vector = ST_init();
+
+    char * dir_name =  define_directory_path(dir, "/index.txt");
+    
+    FILE * fp = fopen(dir_name,"r");
+    free(dir_name);
+
+    if(fp == NULL){
+        perror("Error, open file");
+        exit(1);
+    }
+
+    char string[STRING_SZ];
+    int i = 0;
+    while(fscanf(fp,"%[^\n\t]", string) != EOF){
+        fscanf(fp,"%*[\n\t]");
+        String * page_name = string_create(string);
+
+        Page * page = page_create(page_name);
+        printf("PAGE NAME : ");
+        string_print(page_name);
+
+        vector_insert(sys->pages, page);
+        
+        int  * idx = (int*)malloc(sizeof(int));
+        *idx = i;
+
+        ST_PUT(sys->page_idx_vector, page_name, idx);
+        
+        i++;
+    }
+
+    fclose(fp);
+
+
+}
+
 
 
 void system_execute(System * sys){
@@ -70,8 +136,14 @@ void system_execute(System * sys){
 }
 void system_destroy(System * sys){
     if(sys){
-        if(sys->page_links)
-            ST_destroy(sys->page_links, vector_destroy);
+        if(sys->pages)
+            vector_destroy(sys->pages);
+
+        if(sys->page_idx_vector)
+            ST_destroy(sys->page_idx_vector, free);
+
+        // if(sys->page_links)
+        //     ST_destroy(sys->page_links, vector_destroy);
 
         if(sys->term_list)
             ST_destroy(sys->term_list, vector_destroy);
@@ -111,32 +183,16 @@ static Vector * read_stop_words(char * dir){
 
     return stop_words;
 }
-static ST * read_terms(char * dir,  Vector * stop_words){
+static ST * read_terms(char * dir,  Vector * pages, Vector * stop_words){
     ST * term_list = ST_init();
 
-    char * dir_name =  define_directory_path(dir, "/index.txt");
-    
-    FILE * fp = fopen(dir_name,"r");
-    free(dir_name);
-
-    if(fp == NULL){
-        perror("Error, open file");
-        exit(1);
-    }
-
-    char string[STRING_SZ];
     int i = 0;
-    while(fscanf(fp,"%[^\n\t]", string) != EOF){
-        fscanf(fp,"%*[\n\t]");
-        String * page_name = string_create(string);
-        printf("PAGE NAME : ");
-        string_print(page_name);
-        read_page(page_name, dir, stop_words, term_list);
-        // string_destroy(page_name);
-        i++;
+
+    for(int i = 0; i < vector_size(pages); i ++){
+        Page * page = vector_get(pages, i);
+        read_page(page_get_name(page), dir, stop_words, term_list);
     }
 
-    fclose(fp);
     
     return term_list;
 }
@@ -178,7 +234,7 @@ static void read_page(String * page_name, char * dir, Vector * stop_words, ST * 
         // printf("(%s)\n", string);
         String * term = string_create(string); 
         string_tolower(term);
-        string_print(term);
+        // string_print(term);
 
         Vector * vet_term_docs = NULL;
 
@@ -206,10 +262,8 @@ static void read_page(String * page_name, char * dir, Vector * stop_words, ST * 
 
 }
 
-static ST * read_page_links(char * dir){
+static void read_page_links(char * dir, Vector * pages, ST * page_idx_vector){
     printf("\n\n\nPAGE LINKS:\n\n\n");
-
-    ST * page_links = ST_init();
 
     char * file_path =  define_directory_path(dir, "/graph.txt");
 
@@ -229,27 +283,31 @@ static ST * read_page_links(char * dir){
         int n; // numero de elementos associados
         fscanf(fp,"%d", &n);
         fscanf(fp,"%*[ ]");
-        // printf("int n : %d\n", n);
 
-        Vector * adj_list =  vector_create(n, string_destroy);
+        int * idx_vet = ST_get(page_idx_vector, vertex);
+
+        Page * page = vector_get(pages, *idx_vet); 
+        page_set_out_number(page, n);
+
+
         for(int i = 0 ; i < n; i++){
             fscanf(fp,"%[^ \n\t]", string);
             // printf("\tadj list : (%s)\n", string);
             fscanf(fp,"%*[ \n\t]");
-
+            
             String * adj_vertex = string_create(string); // nome do arquivo adjacentes ao vertex 
-            vector_insert(adj_list, adj_vertex); // precisaria armanezar o tamanho de cada lista
+            Page * page_adj = vector_get(pages, *(int*)ST_get(page_idx_vector, adj_vertex)); 
+            page_insert_in_file(page_adj,page);
+            string_destroy(adj_vertex);
+
         }
 
-        ST_PUT(page_links, vertex, adj_list);
 
         fscanf(fp,"%*[ \n\t]");
 
-        // vector_destroy(adj_list);
         string_destroy(vertex);
     }
     
     fclose(fp);
 
-    return page_links;
 }
