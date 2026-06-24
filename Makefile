@@ -26,9 +26,6 @@ string.o: string.c
 system.o: system.c	
 	gcc -c system.c
 
-linkedList.o: linkedList.c
-	gcc -c linkedList.c
-
 page.o: page.c	
 	gcc -c page.c
 
