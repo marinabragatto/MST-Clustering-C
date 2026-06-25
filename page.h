@@ -15,6 +15,10 @@ void print_page(Page * page);
 void print_page_v2(Page * page);
 void page_destroy(void * page);
 
+int page_get_out_number(Page* page);
 
+int page_compare(void* page1, void* page2); //compara por nome, retorna 0 se forem iguais
+
+Vector* page_get_in_page(Page * page);
 
 #endif

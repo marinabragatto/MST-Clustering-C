@@ -1,4 +1,5 @@
 #include "page.h"
+#include <string.h>
 
 #define MAX_SZ 100 // definir esse valor
 
@@ -72,4 +73,20 @@ void print_page(Page * page){
 void print_page_v2(Page * page){
     printf("Page name:");
     string_print(page->name);
+}
+
+int page_get_out_number(Page* page){
+    return page->n_out;
+}
+
+
+int page_compare(void* page1, void* page2){
+    Page* p1 = (Page*)page1;
+    Page* p2 = (Page*)page2;
+    return compare(p1->name, p2->name);
+}
+
+
+Vector* page_get_in_page(Page * page){
+    return page->in_page;
 }

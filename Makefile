@@ -1,9 +1,9 @@
-objects := vector.o main.o search.o simbolTable.o string.o system.o page.o ioreader.o string_map_vector.o utils.o
+objects := vector.o main.o search.o simbolTable.o string.o system.o page.o ioreader.o string_map_vector.o utils.o page_rank.o
 
 all: $(objects)
 	gcc -o trab2 $^
 
-sources := vector.c main.c search.c simbolTable.c string.c system.c page.c ioreader.c string_map_vector.c utils.c
+sources := vector.c main.c search.c simbolTable.c string.c system.c page.c ioreader.c string_map_vector.c utils.c page_rank.c
 debug: $(sources)
 	gcc -o teste $^ -g
 
@@ -37,6 +37,9 @@ string_map_vector.o: string_map_vector.c
 
 utils.o: utils.c	
 	gcc -c utils.c
+
+page_rank.o:
+	gcc -c page_rank.c
 
 clean:
 	rm -f *.o trab2 teste

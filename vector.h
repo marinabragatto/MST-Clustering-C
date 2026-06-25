@@ -19,4 +19,6 @@ void * vector_get(Vector * vet, int idx);
 void * vector_get_last(Vector * vet);
 // alguma implementação generica de vet, vetor , etc
 
+int vector_contains(Vector* vet, void* data, int(*compare)(void*, void*));
+
 #endif

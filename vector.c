@@ -74,3 +74,12 @@ void * vector_get_last(Vector * vet){
         return vet->data[vet->size - 1];
     return NULL;
 }
+
+int vector_contains(Vector* vet, void* data, int(*compare)(void*, void*)){
+    for(int i = 0; i < vet->size; i++){
+        if(compare(vet->data[i], data) == 0)
+            return 1; // contem
+    }
+
+    return 0;
+}
