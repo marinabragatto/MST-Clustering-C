@@ -3,6 +3,7 @@
 
 #include "string.h"
 #include "vector.h"
+#include "string_map_vector.h"
 
 typedef struct Page Page;
 
@@ -15,6 +16,11 @@ void print_page(Page * page);
 void print_page_v2(Page * page);
 void page_destroy(void * page);
 
-
+// PAGERANK
+void page_set_pagerank(Page* page, double pr);
+double page_get_pagerank(Page* page);
+void page_rank_execute(StringMapVector* pages);
+Vector* page_get_in_page(Page* page);
+int page_get_out_number(Page* page);
 
 #endif
