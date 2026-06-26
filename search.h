@@ -2,6 +2,7 @@
 #define SEARCH_H
 
 #include "string.h"
+#include "vector.h"
 #include <stdlib.h>
 
 typedef struct Search Search;
@@ -9,6 +10,7 @@ typedef struct Search Search;
 Search * search_read();
 void search_process(Search * se);
 void search_print(Search * se);
-String * search_get_word(Search * se);
+void search_destroy(Search * se);
+Vector * search_get_words(Search * se);
 
 #endif

@@ -1,12 +1,12 @@
-#include "ioreader.h"
+#include "ioReader.h"
 #include "page.h"
 
 
-void read_page_terms(Page* page, char * dir, Vector * stop_words, ST * term_list);
+void read_page_terms(Page* page, char * dir, ST * stop_words, ST * term_list);
 
-Vector * read_stop_words(char * dir){
+ST * read_stop_words(char * dir){
     // nossa stopword vai ser uma Simbol Table (hash)
-    Vector * stop_words = vector_create(VECTOR_SZ, string_destroy);
+    ST * stop_words = ST_init();
     
     char * dir_name =  define_directory_path(dir, "/stopwords.txt");
     print_char(dir_name);
@@ -23,7 +23,9 @@ Vector * read_stop_words(char * dir){
     while(fscanf(fp,"%[^\n\t]", string) != EOF){
         fscanf(fp,"%*[\n\t]");
         String * str_ptr = string_create(string);
-        vector_insert(stop_words, str_ptr);
+        int sucess=ST_PUT(stop_words, str_ptr, str_ptr);
+        if (!sucess)
+            string_destroy(str_ptr);
         i++;
     }
 
@@ -69,7 +71,7 @@ StringMapVector * read_pages_name( char * dir){
 
 }
 
-ST * read_terms(char * dir,  StringMapVector * pages, Vector * stop_words){
+ST * read_terms(char * dir,  StringMapVector * pages, ST * stop_words){
     ST * term_list = ST_init();
 
     int i = 0;
@@ -84,7 +86,7 @@ ST * read_terms(char * dir,  StringMapVector * pages, Vector * stop_words){
 }
 
 
-void read_page_terms(Page * page, char * dir, Vector * stop_words, ST * term_list){
+void read_page_terms(Page * page, char * dir, ST * stop_words, ST * term_list){
 
     // !!!!!!!!!!!! Essa função já tá lendo os termos de todos os arquivos, falta agora
     // fazer com que ela coloque eles na ST seguindo as condições
@@ -116,7 +118,7 @@ void read_page_terms(Page * page, char * dir, Vector * stop_words, ST * term_lis
         Vector * vet_term_docs = NULL;
 
         // ***** tem que verificar se o termo é uma stop word *****
-        if(1){ // esse if é para verificar se é uma stop word
+        if(!ST_get(stop_words, term)){ // esse if é para verificar se é uma stop word
             if(vet_term_docs = ST_get(term_list, term)){
                 Page * last_page = vector_get_last(vet_term_docs);
 
@@ -133,6 +135,10 @@ void read_page_terms(Page * page, char * dir, Vector * stop_words, ST * term_lis
                 vector_insert(vet_term_docs, page); // insere o documento cmo associado ao termo
                 ST_PUT(term_list, term, vet_term_docs);
             }
+        }
+        else{
+            printf("era stop word: ");
+            string_print(term);
         }
         string_destroy(term);
     }

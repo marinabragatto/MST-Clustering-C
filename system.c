@@ -6,8 +6,8 @@
 #include "system.h"
 #include "string.h"
 #include "page.h"
-#include "string_map_vector.h"
-#include "ioreader.h"
+#include "stringMapVector.h"
+#include "ioReader.h"
 #include "utils.h"
 
 #include <string.h>
@@ -16,7 +16,7 @@
 
 
 struct System{
-    Vector * stop_words; // COLOCAR TIPO HASH!
+    ST * stop_words; // COLOCAR TIPO HASH!
     ST * term_list; // termo -> lista de Pages que ele aparece
     StringMapVector * pages;
 };
@@ -40,10 +40,11 @@ System * system_init(char * dir){
     System * sys = (System*) malloc(sizeof(System));
 
     sys->stop_words = read_stop_words(dir);
+    // sys->stop_words =NULL;
     
     /*debug*/
     printf("stop words\n");
-    vector_print(sys->stop_words, string_print);
+    // vector_print(sys->stop_words, string_print);
     printf("stop words END\n");
     /*debug*/ 
 
@@ -63,14 +64,26 @@ System * system_init(char * dir){
 
 void system_execute(System * sys){
     Search * se; 
+    int i = 0;
     while(se = search_read()){
-        search_print(se);
-        Vector * pages = ST_get(sys->term_list, search_get_word(se));
+        printf("search %d\n", i);
+        Vector * words = search_get_words(se);
 
-        for(int i = 0; i <  vector_size(pages); i++){
-            print_page_v2(vector_get(pages,i));
+        for(int j = 0; j < vector_size(words); j++){
+            printf("\t");
+            string_print(vector_get(words, j));
+            // Vector * pages = ST_get(sys->term_list);
+            // if(pages){
+            //     for(int i = 0; i <  vector_size(pages); i++){
+            //         print_page_v2(vector_get(pages,i));
+            //     }
+            // }
         }
 
+        // fflush(stdout);
+        search_destroy(se);
+        // printf("search %d\n\n", i);
+        i++;
         // if(search_get_word(se)  != nao eh uma stop word)  //
 
         // verificar aqui se para cada termo da search, ele ta no documento X 
@@ -91,7 +104,7 @@ void system_destroy(System * sys){
             ST_destroy(sys->term_list, vector_destroy);
 
         if(sys->stop_words)
-            vector_destroy(sys->stop_words);
+            ST_destroy(sys->stop_words, string_destroy);
 
         free(sys);
     }
