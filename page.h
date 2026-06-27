@@ -4,7 +4,7 @@
 #include "simbolTable.h"
 #include "string.h"
 #include "vector.h"
-#include "string_map_vector.h"
+#include "stringMapVector.h"
 
 typedef struct Page Page;
 
