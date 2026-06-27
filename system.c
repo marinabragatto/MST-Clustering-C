@@ -21,8 +21,8 @@ struct System{
     StringMapVector * pages;
 };
 
-
-
+static Vector *  system_process_search(System * sys, Vector * words);
+static Vector * system_find_smaller_vector(System * sys, Vector * words);
 
 void print_pages(System * sys){
     for(int i = 0; i < SMV_get_size(sys->pages) ; i++){
@@ -40,61 +40,104 @@ System * system_init(char * dir){
     System * sys = (System*) malloc(sizeof(System));
 
     sys->stop_words = read_stop_words(dir);
-    // sys->stop_words =NULL;
     
-    /*debug*/
-    printf("stop words\n");
-    // vector_print(sys->stop_words, string_print);
-    printf("stop words END\n");
-    /*debug*/ 
-
     sys->pages = read_pages_name(dir);
-    print_pages(sys) ; // teste debug
+    print_pages(sys) ; // debug
     sys->term_list = read_terms(dir, sys->pages, sys->stop_words); /*debug esta dentro das funcoes*/
 
-    // sys->page_links = NULL;
-
     read_pages_graph(dir, sys->pages); /*debug esta dentro das funcoes*/
-    print_pages(sys) ; // teste debug
+    print_pages(sys) ; // debug
 
     return sys;
 }
 
+static Vector * system_find_smaller_vector(System * sys, Vector * words){
+    // verificar se nao tem caso que quebra
+    int idx_min = -1;
+    Vector * min = NULL;
+    
+   for(int j = 0; j < vector_size(words); j++){
+        String * w = vector_get(words, j); // palavra individual
+        Vector * pages = ST_get(sys->term_list, w); // vetor de paginas associadas
+        
+        if(pages){ // se o termo nao eh uma stop word ou se o termo existe no nosso conjunto de paginas  
+            if(min){ // se o min ja foi inicializado
+                if(vector_compare_smaller(min, pages) > 1){
+                    min = pages;
+                    idx_min = j;
+                }
+            }
+            else{ // se ele for nulo tem que iniciar a primeira vez
+                // depois vai cair sempre no if acima
+                min = pages;
+                idx_min = j;
+            
+            }
+        }
+    }
 
+
+    return min;
+    
+}
+
+static Vector * system_process_search(System * sys, Vector * words){
+    // if(search_get_word(se)  != nao eh uma stop word)  //
+
+    // cada palavra tem um vetor associado
+    // ai teria que iterar sobre esses vetores e achar o minimo
+    Vector * smaller_vet =  system_find_smaller_vector(sys, words); // tratar se retornar null
+    // poderia por acaso ter um com tamanho 0? acho que sim
+
+    // iterar sobre os documentos do smaller vet e verificar
+    // saida vetor de documentos resposta do problema!
+    Vector * output = vector_create(VECTOR_SZ, NULL);
+    
+    if(smaller_vet){
+        // printf("smaller vet size : %d\n", vector_size(smaller_vet));
+        for(int i = 0; i < vector_size(smaller_vet); i ++){
+            // printf("entrei looping\n");
+            // para cada documento, verificar se tem todos os termos da busca
+            Page * page = vector_get(smaller_vet, i);
+            if(page_has_words(page,words)){
+                vector_insert(output, page);
+            }
+            else{
+                // printf("page do not have the term\n");
+            }
+        }
+    }
+
+    return output;
+}
 
 void system_execute(System * sys){
     Search * se; 
     int i = 0;
-    while(se = search_read()){
+    while(se = search_read(sys->stop_words)){
         printf("search %d\n", i);
-        Vector * words = search_get_words(se);
-
-        for(int j = 0; j < vector_size(words); j++){
+        Vector * words = search_get_words(se); // palavras da busca
+        Vector * docs_answer = system_process_search(sys, words);
+        for(int i = 0; i <  vector_size(docs_answer); i++){
+            printf("ANSWER: ");
             printf("\t");
-            string_print(vector_get(words, j));
-            // Vector * pages = ST_get(sys->term_list);
-            // if(pages){
-            //     for(int i = 0; i <  vector_size(pages); i++){
-            //         print_page_v2(vector_get(pages,i));
-            //     }
-            // }
+            print_page_v2(vector_get(docs_answer, i));
+        }   
+        if(vector_size(docs_answer) == 0){
+            printf("no anwser!\n");
         }
 
-        // fflush(stdout);
-        search_destroy(se);
-        // printf("search %d\n\n", i);
-        i++;
-        // if(search_get_word(se)  != nao eh uma stop word)  //
 
-        // verificar aqui se para cada termo da search, ele ta no documento X 
-        // sys->term_list 
-        // usar essa var para conferir
-        // fazer looping buscando
+        search_destroy(se);
+        vector_destroy(docs_answer);
+        i++;
     }
 
     /// depois teria que ordenar aqui com base no page rank de alguma forma
     // vai ter uma funcao que dado uma pagina computa o page rank dela, talvez vale a pena computar uma vez só e armazenar para nao ficar fazendo de novo toda vez. 
 }
+
+
 void system_destroy(System * sys){
     if(sys){
         if(sys->pages)

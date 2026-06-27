@@ -31,9 +31,23 @@ void vector_insert(Vector * vet, void * element){
     vet->data[vet->size] = element;
     vet->size++;
 
-
 }
 
+void * find_min(Vector * vet, compare_func compare){
+
+    int idx_min = 0;
+    void * value = vector_get(vet, 0);
+    for(int  i = 1; i < vet->size; i++){
+        void * element = vector_get(vet, i);
+        if(compare(value,element) > 0){
+            idx_min=i;
+            value = element;
+        }
+    }
+
+
+    return value;
+}
 void vector_destroy(void * vet){
     Vector * vet_ptr = (Vector*)vet;
     
@@ -73,4 +87,20 @@ void * vector_get_last(Vector * vet){
     if (vet->size > 0)
         return vet->data[vet->size - 1];
     return NULL;
+}
+
+
+int vector_compare_smaller(void * vet1, void * vet2){
+    Vector * v1_ptr = (Vector*)vet1;
+    Vector * v2_ptr = (Vector*)vet2;
+
+    if(vector_size(v1_ptr) > vector_size(v2_ptr)){
+        return 1;
+    }
+    if(vector_size(v1_ptr) < vector_size(v2_ptr)){
+        return -1;
+    }
+
+    return 0;
+
 }

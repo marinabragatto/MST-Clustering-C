@@ -5,13 +5,14 @@
 #include "simbolTable.h"
 #include "stringMapVector.h"
 #include "utils.h"
+#include "search.h"
 
 ST * read_stop_words(char * dir);
 
 ST * read_terms(char * dir,  StringMapVector * pages, ST * stop_words);
 
 void read_pages_graph(char * dir, StringMapVector * pages);
-
+Search * search_read(ST * stopwords);
 StringMapVector * read_pages_name(char * dir);
 
 

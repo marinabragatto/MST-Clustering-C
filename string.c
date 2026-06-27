@@ -22,6 +22,9 @@ String * string_create(char * c){
 void string_print(void * string){
     printf("(%s)\n",((String*)string)->c);
 }
+void string_print_v2(void * string){
+    printf("(%s)",((String*)string)->c);
+}
 
 int string_get_len(String* string){
     return string->len;

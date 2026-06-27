@@ -16,39 +16,21 @@ void search_process(Search * se);
 void search_print(Search * se);
 
 
-
-Search * search_read(){
-    // o caractere de fim de arquivo seja lido.
-    // precisa ler ate o fim de um arquivo na verdade
+Search * search_create(){
     Search * se = (Search*)malloc(sizeof(Search)); 
     se->words = vector_create(VECTOR_SZ, string_destroy);
-    
-    char string[MAX_SIZE];
-    char c;
-    while(scanf("%29s",string) == 1){
-
-        vector_insert(se->words, string_create(string));
-        // printf("coisa estranha: (%s)\n", string);
-        
-        if(scanf("%c", &c) != 1)
-            break;
-        
-        if(c == '\n' || c == '\r')
-            break;
-    }
-    // scanf("%*[ \n\t]");
-
-
-    if(vector_size(se->words) == 0){
-        search_destroy(se);
-        return NULL;
-    }
-    // scanf("%*[ ]");
-    
 
     return se;
 }
 
+void search_insert_word(Search * se, String * word){
+    vector_insert(se->words, word);
+}
+
+
+int search_num_words(Search * se){
+    return vector_size(se->words);
+}
 void search_process(Search * se){
 
 }
@@ -63,7 +45,7 @@ void search_print(Search * se){
         printf("\t");
         string_print(vector_get(se->words, i));
     }
-    printf(")");
+    printf(")\n");
 }
 
 void search_destroy(Search * se){
