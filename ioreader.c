@@ -1,12 +1,11 @@
-#include "ioreader.h"
+#include "ioReader.h"
 #include "page.h"
 
 
-void read_page_terms(Page* page, char * dir, Vector * stop_words, ST * term_list);
+void read_page_terms(Page* page, char * dir, ST * stop_words, ST * term_list);
 
-Vector * read_stop_words(char * dir){
-    // nossa stopword vai ser uma Simbol Table (hash)
-    Vector * stop_words = vector_create(VECTOR_SZ, string_destroy);
+ST * read_stop_words(char * dir){
+    ST * stop_words = ST_init();
     
     char * dir_name =  define_directory_path(dir, "/stopwords.txt");
     print_char(dir_name);
@@ -20,10 +19,13 @@ Vector * read_stop_words(char * dir){
     char string[STRING_SZ];
     int i = 0;
 
+    // arrumar essa leitura
     while(fscanf(fp,"%[^\n\t]", string) != EOF){
         fscanf(fp,"%*[\n\t]");
         String * str_ptr = string_create(string);
-        vector_insert(stop_words, str_ptr);
+        int sucess=ST_PUT(stop_words, str_ptr, str_ptr);
+        if (!sucess)
+            string_destroy(str_ptr);
         i++;
     }
 
@@ -51,6 +53,7 @@ StringMapVector * read_pages_name( char * dir){
 
     char string[STRING_SZ];
     int i = 0;
+    // arrumar essa leitura
     while(fscanf(fp,"%[^\n\t]", string) != EOF){
         fscanf(fp,"%*[\n\t]");
         String * page_name = string_create(string);
@@ -69,7 +72,7 @@ StringMapVector * read_pages_name( char * dir){
 
 }
 
-ST * read_terms(char * dir,  StringMapVector * pages, Vector * stop_words){
+ST * read_terms(char * dir,  StringMapVector * pages, ST * stop_words){
     ST * term_list = ST_init();
 
     int i = 0;
@@ -84,13 +87,10 @@ ST * read_terms(char * dir,  StringMapVector * pages, Vector * stop_words){
 }
 
 
-void read_page_terms(Page * page, char * dir, Vector * stop_words, ST * term_list){
+void read_page_terms(Page * page, char * dir, ST * stop_words, ST * term_list){
 
-    // !!!!!!!!!!!! Essa função já tá lendo os termos de todos os arquivos, falta agora
-    // fazer com que ela coloque eles na ST seguindo as condições
+    // VERIFICAR SE TA INSERINDO DE ACORDO COM AS CONDIÇOES DO PDF!
     
-    // termo -> Vector com documentos que contém ele
-    // termo -> Vector de documentos que contém ele
     String * page_name = page_get_name(page);
     char * tmp =  define_directory_path(dir, "/pages/");
     char * file_path = define_directory_path(tmp, string_get_char_pointer(page_name,0));
@@ -103,20 +103,16 @@ void read_page_terms(Page * page, char * dir, Vector * stop_words, ST * term_lis
         exit(1);
     }
     free(file_path);
-    
-
+     
+    char c;
     char string[STRING_SZ];
-    while(fscanf(fp,"%[^\n\t ]", string) != EOF){
-        fscanf(fp,"%*[\n\t ]");
-        // printf("(%s)\n", string);
+    while(fscanf(fp,"%199s%c", string, &c) != EOF){
         String * term = string_create(string); 
         string_tolower(term);
-        // string_print(term);
 
         Vector * vet_term_docs = NULL;
 
-        // ***** tem que verificar se o termo é uma stop word *****
-        if(1){ // esse if é para verificar se é uma stop word
+        if(!ST_get(stop_words, term)){ // nao eh uma stop word
             if(vet_term_docs = ST_get(term_list, term)){
                 Page * last_page = vector_get_last(vet_term_docs);
 
@@ -133,8 +129,15 @@ void read_page_terms(Page * page, char * dir, Vector * stop_words, ST * term_lis
                 vector_insert(vet_term_docs, page); // insere o documento cmo associado ao termo
                 ST_PUT(term_list, term, vet_term_docs);
             }
+
+            page_insert_word(page, term);// talvez p reduzir memoria reaproveitar o ponteiro
         }
-        string_destroy(term);
+        else{
+            // eh uma stopword
+            printf("era stop word:");
+            string_print(term);
+            string_destroy(term);
+        }
     }
     
     fclose(fp);
@@ -143,7 +146,7 @@ void read_page_terms(Page * page, char * dir, Vector * stop_words, ST * term_lis
 
 void read_pages_graph(char * dir, StringMapVector * pages){
     
-    printf("\n\n\nPAGE LINKS:\n\n\n");
+    printf("\n\n\nPAGE LINKS:\n\n\n"); 
 
     char * file_path =  define_directory_path(dir, "/graph.txt");
 
@@ -155,7 +158,9 @@ void read_pages_graph(char * dir, StringMapVector * pages){
     free(file_path);
     
     char string[STRING_SZ]; 
+
     
+    // arrumar essa leitura
     while(fscanf(fp,"%[^\n\t ]", string) != EOF){
         fscanf(fp,"%*[\n\t ]");
         String * vertex = string_create(string); // nome do arquivo (vertice)
@@ -171,7 +176,6 @@ void read_pages_graph(char * dir, StringMapVector * pages){
 
         for(int i = 0 ; i < n; i++){
             fscanf(fp,"%[^ \n\t]", string);
-            // printf("\tadj list : (%s)\n", string);
             fscanf(fp,"%*[ \n\t]");
             
             String * adj_vertex = string_create(string); // nome do arquivo adjacentes ao vertex 
@@ -189,4 +193,36 @@ void read_pages_graph(char * dir, StringMapVector * pages){
     
     fclose(fp);
 
+}
+Search * search_read(ST * stopwords){
+    // o caractere de fim de arquivo seja lido.
+    // precisa ler ate o fim de um arquivo na verdade
+    Search * se = search_create();
+    
+    char string[STRING_SZ];
+    char c;
+    while(scanf("%199s",string) == 1){
+        String * word = string_create(string);
+        if(!ST_get(stopwords, word)){ // acho que nao precisa fazer, mas por enquanto vou deixar
+        // é que sempre que fazer o get na sys->term_list, vai retornar nada
+            search_insert_word(se,word);
+        }
+        else{
+            string_destroy(word);
+        }
+        
+        if(scanf("%c", &c) != 1)
+            break;
+        
+        if(c == '\n' || c == '\r')
+            break;
+    }
+
+    if(search_num_words(se)== 0){
+        search_destroy(se);
+        return NULL;
+    }
+    
+
+    return se;
 }

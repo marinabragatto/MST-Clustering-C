@@ -1,5 +1,5 @@
-#ifndef STRING_MAP_VECTOR_H
-#define STRING_MAP_VECTOR_H
+#ifndef stringMapVector_H
+#define stringMapVector_H
 
 #include "vector.h"
 #include "simbolTable.h"

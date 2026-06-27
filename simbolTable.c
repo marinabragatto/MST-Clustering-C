@@ -51,7 +51,7 @@ int compare_character(unsigned char c1, unsigned char c2){
     return tolower(c1) - tolower(c2);
 }
 
-static TST * rec_put(TST * tst, String* key, Value val, int d){ 
+static TST * rec_put(TST * tst, String* key, Value val, int d, int * sucess){ 
     unsigned char c = string_get_character(key, d); //key deveria ser do tipo string?
     // st vazia
     if (tst == NULL){ 
@@ -61,25 +61,30 @@ static TST * rec_put(TST * tst, String* key, Value val, int d){
     int cmp = compare_character(c, tst->c);
     // caso 1: menor, insere a esquerda
     if(cmp < 0){
-        tst->l = rec_put(tst->l, key, val, d);
+        tst->l = rec_put(tst->l, key, val, d, sucess);
     }
     // caso2: maior, insere a direita
     else if(cmp > 0){
-        tst->r = rec_put(tst->r, key, val, d);
+        tst->r = rec_put(tst->r, key, val, d, sucess);
     }
 
     //caso 3: igual (substring ja esta inserida), insere o proximo caractere
     else if(d < string_get_len(key) - 1){
-        tst->m = rec_put(tst->m, key, val, d+1);
+        tst->m = rec_put(tst->m, key, val, d+1, sucess);
     }
     else{
-        tst->val = val;
+        if (tst->val == NULL) {
+            tst->val = val;
+            *sucess = 1;
+        }
     }
     return tst;
 }
 
-void ST_PUT(ST * st, Key key, Value val){
-    st->tst = rec_put(st->tst, key, val, 0);
+int ST_PUT(ST * st, Key key, Value val){
+    int sucess = 0;
+    st->tst = rec_put(st->tst, key, val, 0, &sucess);
+    return sucess;
 }
 
 //Value ST_get(Key key){}
