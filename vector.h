@@ -9,6 +9,7 @@ typedef struct Vector Vector;
 typedef void (*destroy_func)(void *); 
 typedef void (*print_func)(void *); 
 typedef int (*compare_func)(void*, void*); 
+typedef int (*compare_tosort_func)(const void*, const void*);
 
 
 
@@ -22,5 +23,7 @@ void * vector_get_last(Vector * vet);
 int vector_compare_smaller(void * vet1, void * vet2);
 void * find_min(Vector * vet, compare_func compare);
 // alguma implementação generica de vet, vetor , etc
+
+void vector_sort(Vector* vet, compare_tosort_func compare);
 
 #endif

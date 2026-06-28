@@ -62,7 +62,7 @@ static Vector * system_find_smaller_vector(System * sys, Vector * words){
         
         if(pages){ // se o termo nao eh uma stop word ou se o termo existe no nosso conjunto de paginas  
             if(min){ // se o min ja foi inicializado
-                if(vector_compare_smaller(min, pages) > 1){
+                if(vector_compare_smaller(min, pages) == 1){
                     min = pages;
                     idx_min = j;
                 }
@@ -114,10 +114,22 @@ static Vector * system_process_search(System * sys, Vector * words){
 void system_execute(System * sys){
     Search * se; 
     int i = 0;
+    page_rank_execute(sys->pages);
     while(se = search_read(sys->stop_words)){
         printf("search %d\n", i);
         Vector * words = search_get_words(se); // palavras da busca
         Vector * docs_answer = system_process_search(sys, words);
+
+        //page_calculate_pagerank(docs_answer);
+
+        printf("Vetor pré ordenação: "); // debug
+        for(int i = 0; i < vector_size(docs_answer); i++){ // debug
+            printf("pr %d: %.8lf\n", i, page_get_pagerank(vector_get(docs_answer, i)));
+        }
+        printf("Iniciando ordenacao de %d elementos...\n", vector_size(docs_answer)); // debug
+        vector_sort(docs_answer, page_compare);
+        printf("Ordenacao concluida!\n"); // debug
+
         for(int i = 0; i <  vector_size(docs_answer); i++){
             printf("ANSWER: ");
             printf("\t");
@@ -126,6 +138,12 @@ void system_execute(System * sys){
         if(vector_size(docs_answer) == 0){
             printf("no anwser!\n");
         }
+        printf("\n");
+        printf("pr:");
+        for(int i = 0; i <  vector_size(docs_answer); i++){
+            printf("%.8lf ", page_get_pagerank(vector_get(docs_answer, i)));
+        }
+        printf("\n");
 
 
         search_destroy(se);
@@ -134,7 +152,7 @@ void system_execute(System * sys){
     }
 
     /// depois teria que ordenar aqui com base no page rank de alguma forma
-    // vai ter uma funcao que dado uma pagina computa o page rank dela, talvez vale a pena computar uma vez só e armazenar para nao ficar fazendo de novo toda vez. 
+    // vai ter uma funcao que dado uma pagina computa o page rank dela, talvez vale a pena computar uma vez só e armazenar para nao ficar fazendo de novo toda vez.
 }
 
 

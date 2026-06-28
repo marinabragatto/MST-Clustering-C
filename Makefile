@@ -1,7 +1,7 @@
 objects := vector.o main.o search.o simbolTable.o string.o system.o page.o ioReader.o stringMapVector.o utils.o
 
 all: $(objects)
-	gcc -o trab2 $^
+	gcc -o trab2 $^ -lm
 
 sources := vector.c main.c search.c simbolTable.c string.c system.c page.c ioReader.c stringMapVector.c utils.c
 debug: $(sources)

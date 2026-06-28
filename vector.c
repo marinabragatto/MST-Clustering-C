@@ -104,3 +104,10 @@ int vector_compare_smaller(void * vet1, void * vet2){
     return 0;
 
 }
+
+
+void vector_sort(Vector* vet, compare_tosort_func compare){
+    printf("chamando qsort\n"); // debug
+    qsort(vet->data, vet->size, sizeof(void*), compare);
+    printf("qsort finalizado\n"); // debug
+}

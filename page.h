@@ -26,4 +26,12 @@ void page_rank_execute(StringMapVector* pages);
 Vector* page_get_in_page(Page* page);
 int page_get_out_number(Page* page);
 
+
+// PAGERANK POR PAGINA
+void page_calculate_pagerank(Vector* pages);
+
+int page_compare(const void* page1, const void* page2);
+
+double page_get_pagerank(Page* page);
+
 #endif
