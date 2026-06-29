@@ -18,7 +18,7 @@ void search_print(Search * se);
 
 Search * search_create(){
     Search * se = (Search*)malloc(sizeof(Search)); 
-    se->words = vector_create(VECTOR_SZ, string_destroy);
+    se->words = vector_create(MAX_SIZE, string_destroy); // mudar o nome de max_size
 
     return se;
 }

@@ -91,9 +91,9 @@ static Vector * system_process_search(System * sys, Vector * words){
 
     // iterar sobre os documentos do smaller vet e verificar
     // saida vetor de documentos resposta do problema!
-    Vector * output = vector_create(VECTOR_SZ, NULL);
-    
+    Vector * output = NULL;
     if(smaller_vet){
+        output = vector_create(vector_size(smaller_vet), NULL); // 
         // printf("smaller vet size : %d\n", vector_size(smaller_vet));
         for(int i = 0; i < vector_size(smaller_vet); i ++){
             // printf("entrei looping\n");
@@ -120,19 +120,6 @@ void system_execute(System * sys){
         Vector * words = search_get_words(se); // palavras da busca
         Vector * docs_answer = system_process_search(sys, words);
 
-        //page_calculate_pagerank(docs_answer);
-
-        vector_sort(docs_answer, page_compare);
-
-        //for(int i = 0; i <  vector_size(docs_answer); i++){
-        //    printf("ANSWER: ");
-        //    printf("\t");
-        //    print_page_v2(vector_get(docs_answer, i));
-        //}   
-        //if(vector_size(docs_answer) == 0){
-        //    printf("no anwser!\n");
-        //}
-        //printf("\n");
         printf("search:");
         //vector_print(words, string_print_v2);
         for(int i = 0; i < vector_size(words); i++){
@@ -143,26 +130,28 @@ void system_execute(System * sys){
         }
         printf("\n");
         printf("pages:");
-        //int answer_size = vector_size(docs_answer);
-        for(int i = 0; i < vector_size(docs_answer); i++){
-            if(i > 0){
-                printf(" ");
+        if(docs_answer){
+            vector_sort(docs_answer, page_compare);
+            for(int i = 0; i < vector_size(docs_answer); i++){
+                if(i > 0){
+                    printf(" ");
+                }
+                print_page_v2(vector_get(docs_answer, i));
             }
-            print_page_v2(vector_get(docs_answer, i));
-        }
-        printf("\n");
-        printf("pr:");
-        for(int i = 0; i <  vector_size(docs_answer); i++){
-            if(i > 0){
-                printf(" ");
+            printf("\n");
+            printf("pr:");
+            for(int i = 0; i <  vector_size(docs_answer); i++){
+                if(i > 0){
+                    printf(" ");
+                }
+                printf("%.17lf", page_get_pagerank(vector_get(docs_answer, i)));
             }
-            printf("%.17lf", page_get_pagerank(vector_get(docs_answer, i)));
+            printf("\n");
+            vector_destroy(docs_answer);
         }
-        printf("\n");
 
 
         search_destroy(se);
-        vector_destroy(docs_answer);
         //i++;
     }
 

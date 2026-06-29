@@ -19,10 +19,10 @@ ST * read_stop_words(char * dir){
     char string[STRING_SZ];
     int i = 0;
 
-    // arrumar essa leitura
-    while(fscanf(fp,"%[^\n\t]", string) != EOF){
-        fscanf(fp,"%*[\n\t]");
+    while(fscanf(fp,"%199s", string) != EOF){
+        
         String * str_ptr = string_create(string);
+        // string_print(str_ptr); remover
         int sucess=ST_PUT(stop_words, str_ptr, str_ptr);
         if (!sucess)
             string_destroy(str_ptr);
@@ -53,14 +53,13 @@ StringMapVector * read_pages_name( char * dir){
 
     char string[STRING_SZ];
     int i = 0;
-    // arrumar essa leitura
-    while(fscanf(fp,"%[^\n\t]", string) != EOF){
-        fscanf(fp,"%*[\n\t]");
+
+    while(fscanf(fp,"%199s", string) != EOF){
         String * page_name = string_create(string);
 
         Page * page = page_create(page_name);
-        //printf("PAGE NAME : ");
-        //string_print(page_name);
+        // printf("PAGE NAME : %d: ", i); remover
+        // string_print(page_name); remover
         SMV_insert(smv, page, page_name);
         i++;
     }
@@ -76,6 +75,7 @@ ST * read_terms(char * dir,  StringMapVector * pages, ST * stop_words){
     ST * term_list = ST_init();
 
     int i = 0;
+
     //printf("Leitura do conteudo das paginas\n"); //debug
     for(int i = 0; i < SMV_get_size(pages); i ++){
         //printf("Page %d: ", i);
@@ -166,32 +166,29 @@ void read_pages_graph(char * dir, StringMapVector * pages){
 
     
     // arrumar essa leitura
-    while(fscanf(fp,"%[^\n\t ]", string) != EOF){
-        fscanf(fp,"%*[\n\t ]");
+    while(fscanf(fp,"%199s", string) != EOF){
         String * vertex = string_create(string); // nome do arquivo (vertice)
-        
+        // string_print(vertex); // remover
         int n; // numero de elementos associados
         fscanf(fp,"%d", &n);
-        fscanf(fp,"%*[ ]");
-
+        // printf(" out : %d \n", n);  // remover
         
         Page * page = SMV_get_by_key(pages, vertex); 
         page_set_out_number(page, n);
 
 
         for(int i = 0 ; i < n; i++){
-            fscanf(fp,"%[^ \n\t]", string);
-            fscanf(fp,"%*[ \n\t]");
+            fscanf(fp,"%199s", string);
             
             String * adj_vertex = string_create(string); // nome do arquivo adjacentes ao vertex 
-
+            // printf("\t"); // remover
+            // string_print(adj_vertex); // remover
             Page * page_adj = SMV_get_by_key(pages, adj_vertex);
             page_insert_in_file(page_adj, page);
             string_destroy(adj_vertex);
 
         }
 
-        fscanf(fp,"%*[ \n\t]");
 
         string_destroy(vertex);
     }

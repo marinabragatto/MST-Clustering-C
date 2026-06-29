@@ -24,8 +24,8 @@ Vector * vector_create(int max_size, destroy_func destroy){
 }
 void vector_insert(Vector * vet, void * element){
     if(vet->size >= vet->max){
-        vet->data = realloc(vet->data, sizeof(void*)*(vet->max + BLOCK));
-        vet->max = vet->max + BLOCK;
+        vet->data = realloc(vet->data, sizeof(void*)*(vet->max*2));
+        vet->max = vet->max*2;
     }
 
     vet->data[vet->size] = element;

@@ -3,7 +3,7 @@
 
 #define ALFA 0.85
 
-#define MAX_SZ 100 // definir esse valor
+#define MAX_SZ 20 // definir esse valor
 
 
 struct Page{

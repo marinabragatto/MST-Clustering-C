@@ -1,8 +1,8 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-#define STRING_SZ 200  // definir um valor para aqui
-#define VECTOR_SZ 200  // definir um valor para aqui
+#define STRING_SZ 100  // definir um valor para aqui
+#define VECTOR_SZ 30  // definir um valor para aqui
 
 #include <string.h>
 #include <stdlib.h>
