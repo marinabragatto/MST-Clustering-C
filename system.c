@@ -42,11 +42,11 @@ System * system_init(char * dir){
     sys->stop_words = read_stop_words(dir);
     
     sys->pages = read_pages_name(dir);
-    print_pages(sys) ; // debug
+    //print_pages(sys) ; // debug
     sys->term_list = read_terms(dir, sys->pages, sys->stop_words); /*debug esta dentro das funcoes*/
 
     read_pages_graph(dir, sys->pages); /*debug esta dentro das funcoes*/
-    print_pages(sys) ; // debug
+    //print_pages(sys) ; // debug
 
     return sys;
 }
@@ -62,7 +62,7 @@ static Vector * system_find_smaller_vector(System * sys, Vector * words){
         
         if(pages){ // se o termo nao eh uma stop word ou se o termo existe no nosso conjunto de paginas  
             if(min){ // se o min ja foi inicializado
-                if(vector_compare_smaller(min, pages) == 1){
+                if(vector_compare_smaller(min, pages) == 1){ // min maior que pages
                     min = pages;
                     idx_min = j;
                 }
@@ -99,7 +99,7 @@ static Vector * system_process_search(System * sys, Vector * words){
             // printf("entrei looping\n");
             // para cada documento, verificar se tem todos os termos da busca
             Page * page = vector_get(smaller_vet, i);
-            if(page_has_words(page,words)){
+            if(page_has_words(page, words, sys->stop_words)){
                 vector_insert(output, page);
             }
             else{
@@ -113,30 +113,32 @@ static Vector * system_process_search(System * sys, Vector * words){
 
 void system_execute(System * sys){
     Search * se; 
-    int i = 0;
+    //int i = 0;
     page_rank_execute(sys->pages);
     while(se = search_read(sys->stop_words)){
-        printf("search %d\n", i);
+        //printf("search %d\n", i);
         Vector * words = search_get_words(se); // palavras da busca
         Vector * docs_answer = system_process_search(sys, words);
 
         //page_calculate_pagerank(docs_answer);
 
-        printf("Vetor pré ordenação: "); // debug
-        for(int i = 0; i < vector_size(docs_answer); i++){ // debug
-            printf("pr %d: %.8lf\n", i, page_get_pagerank(vector_get(docs_answer, i)));
-        }
-        printf("Iniciando ordenacao de %d elementos...\n", vector_size(docs_answer)); // debug
         vector_sort(docs_answer, page_compare);
-        printf("Ordenacao concluida!\n"); // debug
 
+        //for(int i = 0; i <  vector_size(docs_answer); i++){
+        //    printf("ANSWER: ");
+        //    printf("\t");
+        //    print_page_v2(vector_get(docs_answer, i));
+        //}   
+        //if(vector_size(docs_answer) == 0){
+        //    printf("no anwser!\n");
+        //}
+        //printf("\n");
+        printf("search:");
+        vector_print(words, string_print_v2);
+        printf("\n");
+        printf("pages:");
         for(int i = 0; i <  vector_size(docs_answer); i++){
-            printf("ANSWER: ");
-            printf("\t");
             print_page_v2(vector_get(docs_answer, i));
-        }   
-        if(vector_size(docs_answer) == 0){
-            printf("no anwser!\n");
         }
         printf("\n");
         printf("pr:");
@@ -148,7 +150,7 @@ void system_execute(System * sys){
 
         search_destroy(se);
         vector_destroy(docs_answer);
-        i++;
+        //i++;
     }
 
     /// depois teria que ordenar aqui com base no page rank de alguma forma

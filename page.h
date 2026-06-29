@@ -14,7 +14,7 @@ void page_insert_in_file(Page * page, Page * page_in);
 String * page_get_name(Page * page);
 void page_set_out_number(Page * page, int out_number);
 void print_page(Page * page);
-int page_has_words(Page * page, Vector * words);
+int page_has_words(Page * page, Vector * words, ST* stop_words); // words: palabras da busca
 void page_insert_word(Page * page, String * word);
 void print_page_v2(Page * page);
 void page_destroy(void * page);

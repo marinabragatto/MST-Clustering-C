@@ -26,14 +26,15 @@ Page * page_create(String * name){
 }
 void page_insert_word(Page * page, String * word){
     int sucess = 0;
-    printf("inserindo: ");
+    //printf("inserindo: ");
     if((sucess = ST_PUT(page->words, word, word)) == 0){
         printf("erro\n"); // testar inserir dyas palavras iguais
         string_destroy(word);
     }
     else{
-        printf("certo "); // testar inserir dyas palavras iguais
-        string_print(word);
+        //printf("certo "); 
+        // testar inserir dyas palavras iguais
+        //string_print(word);
         
     }
     // se nao deu certo tem q liberar
@@ -50,13 +51,16 @@ String * page_get_name(Page * page){
     return page->name;
 }
 
-int page_has_words(Page * page, Vector * words){
+int page_has_words(Page * page, Vector * words, ST* stop_words){
     /// a nossa tst da pagina, nao guarda se for uma stop word
     // talvez tem que verificar
     // printf("size das palavras da busca %d\n", vector_size(words));
     for(int i  = 0; i < vector_size(words); i++){
         // tem que pensar se ali tem stopword
         String * word = vector_get(words, i);
+        if(ST_get(stop_words, word) != NULL){ // se for stop word, ignora
+            continue;
+        }
         // string_print(word);
         void * has = ST_get(page->words, word);
         if(has ==  NULL){ // pagina nao tem todas as words da search
@@ -87,7 +91,7 @@ void page_destroy(void * page){
 }   
 
 void page_set_out_number(Page * page, int out_number){
-    if(out_number != -1){
+    if(page->n_out != -1){
         // erro ja foi setado um vez
         return;
     }
@@ -111,8 +115,8 @@ void print_page(Page * page){
 }
 
 void print_page_v2(Page * page){
-    printf("Page name:");
-    string_print(page->name);
+    //printf("Page name:");
+    string_print_v2(page->name);
 }
 
 
@@ -127,7 +131,8 @@ double page_get_pagerank(Page* page){
 
 
 // essa função poderia estar em outro lugar, talvez no tad system?
-void page_calculate_pagerank(Vector* pages){
+
+/*void page_calculate_pagerank(Vector* pages){
     int size = vector_size(pages); // n (formula): número total de páginas/documentos;
     
     double* pr_prev = malloc(size * sizeof(double));
@@ -190,6 +195,7 @@ void page_calculate_pagerank(Vector* pages){
     free(pr_prev);
     free(pr_new);
 }
+*/
 
 Vector* page_get_in_page(Page* page){
     return page->in_page;
@@ -228,7 +234,8 @@ void page_rank_execute(StringMapVector* pages){
 
     // Laço de atualização. Na iteração k ≥ 1, o valor do PageRank é computado com base nos valores da iteração anterior:
     double fixed_value = (1.0 - ALFA) / size;
-    double stop_cond;
+    double stop_cond = 0;
+    
     do{
         stop_cond = 0;
         for(int i = 0; i < size; i++){

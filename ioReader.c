@@ -8,7 +8,7 @@ ST * read_stop_words(char * dir){
     ST * stop_words = ST_init();
     
     char * dir_name =  define_directory_path(dir, "/stopwords.txt");
-    print_char(dir_name);
+    //print_char(dir_name);
     FILE * fp = fopen(dir_name,"r"); 
     if(fp == NULL){
         perror("Error, open file");
@@ -59,8 +59,8 @@ StringMapVector * read_pages_name( char * dir){
         String * page_name = string_create(string);
 
         Page * page = page_create(page_name);
-        printf("PAGE NAME : ");
-        string_print(page_name);
+        //printf("PAGE NAME : ");
+        //string_print(page_name);
         SMV_insert(smv, page, page_name);
         i++;
     }
@@ -96,7 +96,7 @@ void read_page_terms(Page * page, char * dir, ST * stop_words, ST * term_list){
     char * file_path = define_directory_path(tmp, string_get_char_pointer(page_name,0));
     free(tmp);
 
-    print_char(file_path);
+    //print_char(file_path);
     FILE * fp = fopen(file_path, "r");
     if(fp == NULL){
         perror("Error, open file");
@@ -134,8 +134,8 @@ void read_page_terms(Page * page, char * dir, ST * stop_words, ST * term_list){
         }
         else{
             // eh uma stopword
-            printf("era stop word:");
-            string_print(term);
+            //printf("era stop word:");
+            //string_print(term);
             string_destroy(term);
         }
     }
@@ -146,7 +146,7 @@ void read_page_terms(Page * page, char * dir, ST * stop_words, ST * term_list){
 
 void read_pages_graph(char * dir, StringMapVector * pages){
     
-    printf("\n\n\nPAGE LINKS:\n\n\n"); 
+    //printf("\n\n\nPAGE LINKS:\n\n\n"); 
 
     char * file_path =  define_directory_path(dir, "/graph.txt");
 
