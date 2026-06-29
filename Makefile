@@ -5,7 +5,7 @@ all: $(objects)
 
 sources := vector.c main.c search.c simbolTable.c string.c system.c page.c ioReader.c stringMapVector.c utils.c
 debug: $(sources)
-	gcc -o teste $^ -g
+	gcc -o teste $^ -g -lm
 
 
 vector.o: vector.c

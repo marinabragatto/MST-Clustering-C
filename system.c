@@ -134,16 +134,29 @@ void system_execute(System * sys){
         //}
         //printf("\n");
         printf("search:");
-        vector_print(words, string_print_v2);
+        //vector_print(words, string_print_v2);
+        for(int i = 0; i < vector_size(words); i++){
+            if(i > 0){
+                printf(" ");
+            }
+            string_print_v2(vector_get(words, i));
+        }
         printf("\n");
         printf("pages:");
-        for(int i = 0; i <  vector_size(docs_answer); i++){
+        //int answer_size = vector_size(docs_answer);
+        for(int i = 0; i < vector_size(docs_answer); i++){
+            if(i > 0){
+                printf(" ");
+            }
             print_page_v2(vector_get(docs_answer, i));
         }
         printf("\n");
         printf("pr:");
         for(int i = 0; i <  vector_size(docs_answer); i++){
-            printf("%.8lf ", page_get_pagerank(vector_get(docs_answer, i)));
+            if(i > 0){
+                printf(" ");
+            }
+            printf("%.17lf", page_get_pagerank(vector_get(docs_answer, i)));
         }
         printf("\n");
 

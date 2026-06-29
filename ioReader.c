@@ -76,10 +76,15 @@ ST * read_terms(char * dir,  StringMapVector * pages, ST * stop_words){
     ST * term_list = ST_init();
 
     int i = 0;
-
+    //printf("Leitura do conteudo das paginas\n"); //debug
     for(int i = 0; i < SMV_get_size(pages); i ++){
+        //printf("Page %d: ", i);
         Page * page = SMV_get_by_idx(pages, i);
+        //string_print_v2(page_get_name(page));
+        //printf("\n");
+        
         read_page_terms(page, dir, stop_words, term_list);
+        //printf("\n\n");
     }
 
     

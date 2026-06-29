@@ -28,7 +28,9 @@ void page_insert_word(Page * page, String * word){
     int sucess = 0;
     //printf("inserindo: ");
     if((sucess = ST_PUT(page->words, word, word)) == 0){
-        printf("erro\n"); // testar inserir dyas palavras iguais
+        //printf("erro "); 
+        // testar inserir dyas palavras iguais
+        //string_print(word);
         string_destroy(word);
     }
     else{
