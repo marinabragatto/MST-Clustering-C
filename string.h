@@ -1,7 +1,7 @@
 #ifndef STRING_H
 #define STRING_H
 
-typedef struct String String;
+typedef char  String;
 
 String * string_create(char * c);
 void string_print(void * string);

@@ -24,14 +24,14 @@ Page * page_create(String * name){
 
     return page;
 }
-void page_insert_word(Page * page, String * word){
+void page_insert_word(Page * page, String * word, char * exist){
     int sucess = 0;
     //printf("inserindo: ");
-    if((sucess = ST_PUT(page->words, word, word)) == 0){
+    if((sucess = ST_PUT(page->words, word, exist)) == 0){
         //printf("erro "); 
         // testar inserir dyas palavras iguais
         //string_print(word);
-        string_destroy(word);
+        // string_destroy(word); removi
     }
     else{
         //printf("certo "); 
@@ -84,7 +84,7 @@ void page_destroy(void * page){
         if(ptr->in_page)
             vector_destroy(ptr->in_page);
         if(ptr->words)
-            ST_destroy(ptr->words, string_destroy);
+            ST_destroy(ptr->words, NULL);
         free(ptr);
     }
 

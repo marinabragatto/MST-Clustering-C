@@ -19,6 +19,7 @@ struct System{
     ST * stop_words; // COLOCAR TIPO HASH!
     ST * term_list; // termo -> lista de Pages que ele aparece
     StringMapVector * pages;
+    char * exist;
 };
 
 static Vector *  system_process_search(System * sys, Vector * words);
@@ -39,15 +40,16 @@ void print_pages(System * sys){
 System * system_init(char * dir){
     System * sys = (System*) malloc(sizeof(System));
 
-    sys->stop_words = read_stop_words(dir);
+    sys->exist = string_create("1") ;// verificar se deu certo
+    // sys->exist = 
+    sys->stop_words = read_stop_words(dir, sys->exist);
     
     sys->pages = read_pages_name(dir);
     //print_pages(sys) ; // debug
-    sys->term_list = read_terms(dir, sys->pages, sys->stop_words); /*debug esta dentro das funcoes*/
+    sys->term_list = read_terms(dir, sys->pages, sys->stop_words, sys->exist); /*debug esta dentro das funcoes*/
 
     read_pages_graph(dir, sys->pages); /*debug esta dentro das funcoes*/
     //print_pages(sys) ; // debug
-
     return sys;
 }
 
@@ -169,7 +171,9 @@ void system_destroy(System * sys){
             ST_destroy(sys->term_list, vector_destroy);
 
         if(sys->stop_words)
-            ST_destroy(sys->stop_words, string_destroy);
+            ST_destroy(sys->stop_words, NULL);
+        if(sys->exist)
+            free(sys->exist);
 
         free(sys);
     }
