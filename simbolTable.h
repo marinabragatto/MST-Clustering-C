@@ -13,11 +13,11 @@ typedef void (*destroy_func)(void *);
 
 ST * ST_init();
 
-void ST_PUT(ST * st, Key key, Value val);
+int ST_PUT(ST * st, Key key, Value val);
 
 //Value ST_get(Key key);
 
-Value ST_get(ST * st, String* key);
+Value ST_get(ST * st, String * key);
 
 //void ST_delete(Key key);
 

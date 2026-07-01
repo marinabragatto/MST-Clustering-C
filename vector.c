@@ -24,16 +24,30 @@ Vector * vector_create(int max_size, destroy_func destroy){
 }
 void vector_insert(Vector * vet, void * element){
     if(vet->size >= vet->max){
-        vet->data = realloc(vet->data, sizeof(void*)*(vet->max + BLOCK));
-        vet->max = vet->max + BLOCK;
+        vet->data = realloc(vet->data, sizeof(void*)*(vet->max*2));
+        vet->max = vet->max*2;
     }
 
     vet->data[vet->size] = element;
     vet->size++;
 
-
 }
 
+void * find_min(Vector * vet, compare_func compare){
+
+    int idx_min = 0;
+    void * value = vector_get(vet, 0);
+    for(int  i = 1; i < vet->size; i++){
+        void * element = vector_get(vet, i);
+        if(compare(value,element) > 0){
+            idx_min=i;
+            value = element;
+        }
+    }
+
+
+    return value;
+}
 void vector_destroy(void * vet){
     Vector * vet_ptr = (Vector*)vet;
     
@@ -75,11 +89,25 @@ void * vector_get_last(Vector * vet){
     return NULL;
 }
 
-int vector_contains(Vector* vet, void* data, int(*compare)(void*, void*)){
-    for(int i = 0; i < vet->size; i++){
-        if(compare(vet->data[i], data) == 0)
-            return 1; // contem
+
+int vector_compare_smaller(void * vet1, void * vet2){
+    Vector * v1_ptr = (Vector*)vet1;
+    Vector * v2_ptr = (Vector*)vet2;
+
+    if(vector_size(v1_ptr) > vector_size(v2_ptr)){
+        return 1;
+    }
+    if(vector_size(v1_ptr) < vector_size(v2_ptr)){
+        return -1;
     }
 
     return 0;
+
+}
+
+
+void vector_sort(Vector* vet, compare_tosort_func compare){
+    //printf("chamando qsort\n"); // debug
+    qsort(vet->data, vet->size, sizeof(void*), compare);
+    //printf("qsort finalizado\n"); // debug
 }

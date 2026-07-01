@@ -1,11 +1,11 @@
-objects := vector.o main.o search.o simbolTable.o string.o system.o page.o ioreader.o string_map_vector.o utils.o page_rank.o
+objects := vector.o main.o search.o simbolTable.o string.o system.o page.o ioReader.o stringMapVector.o utils.o
 
 all: $(objects)
-	gcc -o trab2 $^
+	gcc -o trab2 $^ -lm
 
-sources := vector.c main.c search.c simbolTable.c string.c system.c page.c ioreader.c string_map_vector.c utils.c page_rank.c
+sources := vector.c main.c search.c simbolTable.c string.c system.c page.c ioReader.c stringMapVector.c utils.c
 debug: $(sources)
-	gcc -o teste $^ -g
+	gcc -o teste $^ -g -lm
 
 
 vector.o: vector.c
@@ -29,11 +29,11 @@ system.o: system.c
 page.o: page.c	
 	gcc -c page.c
 
-ioreader.o: ioreader.c	
-	gcc -c ioreader.c
+ioReader.o: ioReader.c	
+	gcc -c ioReader.c
 
-string_map_vector.o: string_map_vector.c	
-	gcc -c string_map_vector.c
+stringMapVector.o: stringMapVector.c	
+	gcc -c stringMapVector.c
 
 utils.o: utils.c	
 	gcc -c utils.c

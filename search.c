@@ -3,44 +3,55 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "vector.h"
+#include "utils.h"
 #define MAX_SIZE 30
 
 struct Search{
-    String * string; // talvez separar cada termo em uma string diferente
+    // String * string; // talvez separar cada termo em uma string diferente
     // acho que é melhor dividir em termos diferentes mesmo, ai podemos conferir se cada termo separadamente é uma stopword
-    Vector * terms; // vetor de termos
+    Vector * words; // vetor de termos
 };
 
 void search_process(Search * se);
 void search_print(Search * se);
 
-Search * search_read(){
-    char string[MAX_SIZE];
-    // o caractere de fim de arquivo seja lido.
-    // precisa ler ate o fim de um arquivo na verdade
-    if(scanf("%[^\n\t]", string) != 1){
-        return NULL;
-    }
-    scanf("%*[\n\t]");
 
+Search * search_create(){
     Search * se = (Search*)malloc(sizeof(Search)); 
+    se->words = vector_create(MAX_SIZE, string_destroy); // mudar o nome de max_size
 
-    se->string = string_create(string);
-    
     return se;
 }
 
+void search_insert_word(Search * se, String * word){
+    vector_insert(se->words, word);
+}
+
+
+int search_num_words(Search * se){
+    return vector_size(se->words);
+}
 void search_process(Search * se){
 
 }
 
-String * search_get_word(Search * se){
-    return se->string;
+Vector * search_get_words(Search * se){
+    return se->words;
 }
 
 void search_print(Search * se){
-    printf("(\nsearch");
-    string_print(se->string);
-    printf(")");
+    printf("(\n");
+    for(int i = 0; i < vector_size(se->words); i++){
+        printf("\t");
+        string_print(vector_get(se->words, i));
+    }
+    printf(")\n");
+}
+
+void search_destroy(Search * se){
+    if(se){
+        if(se->words)
+            vector_destroy(se->words);
+        free(se);
+    }
 }

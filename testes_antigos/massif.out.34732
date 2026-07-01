@@ -1,0 +1,1986 @@
+desc: (none)
+cmd: ./trab2 exemplo/
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=1959096
+mem_heap_B=308969
+mem_heap_extra_B=30351
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=3246349
+mem_heap_B=606025
+mem_heap_extra_B=41375
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=4083092
+mem_heap_B=765111
+mem_heap_extra_B=47713
+mem_stacks_B=0
+heap_tree=detailed
+n4: 765111 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 660800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 619200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 619200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 619200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 619200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 40000 0x10A13B: page_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 40000 0x10A5C1: read_pages_name (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 40000 0x109F62: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 40000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1600 in 1 place, below massif's threshold (1.00%)
+ n1: 82200 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n4: 82200 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n4: 62080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 44480 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 30600 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 21040 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n2: 13960 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n1: 8840 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+         n0: 8840 in 4 places, all below massif's threshold (1.00%)
+        n0: 5120 in 3 places, all below massif's threshold (1.00%)
+       n0: 7080 in 3 places, all below massif's threshold (1.00%)
+      n0: 9560 in 3 places, all below massif's threshold (1.00%)
+     n0: 13880 in 3 places, all below massif's threshold (1.00%)
+    n1: 8760 0x10998C: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8760 in 4 places, all below massif's threshold (1.00%)
+    n1: 8720 0x109957: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8720 in 4 places, all below massif's threshold (1.00%)
+    n0: 120 in 1 place, below massif's threshold (1.00%)
+   n1: 10400 0x10998C: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 10400 in 4 places, all below massif's threshold (1.00%)
+   n1: 9600 0x109957: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 9600 in 4 places, all below massif's threshold (1.00%)
+   n0: 120 in 1 place, below massif's threshold (1.00%)
+ n2: 14016 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 12384 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 12384 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 12384 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 12384 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8095 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=5470397
+mem_heap_B=990545
+mem_heap_extra_B=58279
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=6387197
+mem_heap_B=1161379
+mem_heap_extra_B=65477
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=7747632
+mem_heap_B=1363729
+mem_heap_extra_B=75103
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=9283298
+mem_heap_B=1584214
+mem_heap_extra_B=84338
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1584214 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 1392000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 1350400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 1350400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 1350400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 1350400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 40000 0x10A13B: page_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 40000 0x10A5C1: read_pages_name (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 40000 0x109F62: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 40000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1600 in 1 place, below massif's threshold (1.00%)
+ n1: 155480 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n4: 155480 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 119560 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 87440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 61200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 41240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 26280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 26280 in 4 places, all below massif's threshold (1.00%)
+       n0: 14960 in 3 places, all below massif's threshold (1.00%)
+      n0: 19960 in 3 places, all below massif's threshold (1.00%)
+     n0: 26240 in 3 places, all below massif's threshold (1.00%)
+    n0: 32120 in 3 places, all below massif's threshold (1.00%)
+   n1: 18120 0x10998C: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 18120 in 4 places, all below massif's threshold (1.00%)
+   n1: 17680 0x109957: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 17680 in 4 places, all below massif's threshold (1.00%)
+   n0: 120 in 1 place, below massif's threshold (1.00%)
+ n2: 28640 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 27008 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 27008 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 27008 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 27008 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8094 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=8
+#-----------
+time=10392972
+mem_heap_B=1762606
+mem_heap_extra_B=91378
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1762606 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 1553600 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 1512000 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 1512000 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 1512000 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 1512000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 40000 0x10A13B: page_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 40000 0x10A5C1: read_pages_name (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 40000 0x109F62: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 40000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1600 in 1 place, below massif's threshold (1.00%)
+ n1: 169040 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n4: 169040 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 129600 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 94440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 65760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 43840 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 27600 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 27600 in 4 places, all below massif's threshold (1.00%)
+       n0: 16240 in 3 places, all below massif's threshold (1.00%)
+      n0: 21920 in 3 places, all below massif's threshold (1.00%)
+     n0: 28680 in 3 places, all below massif's threshold (1.00%)
+    n0: 35160 in 3 places, all below massif's threshold (1.00%)
+   n1: 19680 0x10998C: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 19680 in 4 places, all below massif's threshold (1.00%)
+   n1: 19640 0x109957: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 19640 in 4 places, all below massif's threshold (1.00%)
+   n0: 120 in 1 place, below massif's threshold (1.00%)
+ n2: 31872 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 30240 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 30240 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 30240 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 30240 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8094 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=9
+#-----------
+time=11764201
+mem_heap_B=1939287
+mem_heap_extra_B=98369
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1939287 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 1713600 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 1672000 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 1672000 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 1672000 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 1672000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 40000 0x10A13B: page_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 40000 0x10A5C1: read_pages_name (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 40000 0x109F62: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 40000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1600 in 1 place, below massif's threshold (1.00%)
+ n1: 182520 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n4: 182520 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 139760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 101560 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 70320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 46720 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 29280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 29280 in 4 places, all below massif's threshold (1.00%)
+       n0: 17440 in 3 places, all below massif's threshold (1.00%)
+      n0: 23600 in 3 places, all below massif's threshold (1.00%)
+     n0: 31240 in 3 places, all below massif's threshold (1.00%)
+    n0: 38200 in 3 places, all below massif's threshold (1.00%)
+   n1: 21520 0x109957: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 21520 in 4 places, all below massif's threshold (1.00%)
+   n1: 21120 0x10998C: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 21120 in 4 places, all below massif's threshold (1.00%)
+   n0: 120 in 1 place, below massif's threshold (1.00%)
+ n2: 35072 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 33440 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 33440 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 33440 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 33440 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8095 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=10
+#-----------
+time=13509207
+mem_heap_B=2169371
+mem_heap_extra_B=107613
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=15484340
+mem_heap_B=2490040
+mem_heap_extra_B=120624
+mem_stacks_B=0
+heap_tree=detailed
+n4: 2490040 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 2211200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 2169600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 2169600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 2169600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 2169600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 40000 0x10A13B: page_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 40000 0x10A5C1: read_pages_name (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 40000 0x109F62: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 40000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1600 in 1 place, below massif's threshold (1.00%)
+ n1: 225720 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n3: 225720 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 172520 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 125000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 86000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 56560 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 35200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 35200 in 4 places, all below massif's threshold (1.00%)
+       n0: 21360 in 3 places, all below massif's threshold (1.00%)
+      n0: 29440 in 3 places, all below massif's threshold (1.00%)
+     n0: 39000 in 3 places, all below massif's threshold (1.00%)
+    n0: 47520 in 3 places, all below massif's threshold (1.00%)
+   n1: 27200 0x10998C: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 27200 in 4 places, all below massif's threshold (1.00%)
+   n0: 26000 in 2 places, all below massif's threshold (1.00%)
+ n2: 45024 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 43392 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 43392 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 43392 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 43392 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8096 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=16801410
+mem_heap_B=2677484
+mem_heap_extra_B=128732
+mem_stacks_B=0
+heap_tree=detailed
+n4: 2677484 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 2379200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 2337600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 2337600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 2337600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 2337600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 40000 0x10A13B: page_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 40000 0x10A5C1: read_pages_name (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 40000 0x109F62: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 40000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1600 in 1 place, below massif's threshold (1.00%)
+ n1: 241800 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n3: 241800 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 185200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 134400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 92560 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 60840 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 37880 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 37880 in 4 places, all below massif's threshold (1.00%)
+       n0: 22960 in 3 places, all below massif's threshold (1.00%)
+      n0: 31720 in 3 places, all below massif's threshold (1.00%)
+     n0: 41840 in 3 places, all below massif's threshold (1.00%)
+    n0: 50800 in 3 places, all below massif's threshold (1.00%)
+   n1: 29000 0x10998C: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 29000 in 4 places, all below massif's threshold (1.00%)
+   n0: 27600 in 2 places, all below massif's threshold (1.00%)
+ n2: 48384 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 46752 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 46752 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 46752 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 46752 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8100 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=13
+#-----------
+time=18782900
+mem_heap_B=2934193
+mem_heap_extra_B=139071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=19868447
+mem_heap_B=3094713
+mem_heap_extra_B=145343
+mem_stacks_B=0
+heap_tree=detailed
+n4: 3094713 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 2756800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 2715200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 2715200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 2715200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 2715200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 40000 0x10A13B: page_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 40000 0x10A5C1: read_pages_name (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 40000 0x109F62: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 40000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1600 in 1 place, below massif's threshold (1.00%)
+ n1: 273880 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n3: 273880 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 209280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 151560 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 104360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 68440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 42400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 42400 in 4 places, all below massif's threshold (1.00%)
+       n0: 26040 in 3 places, all below massif's threshold (1.00%)
+      n0: 35920 in 3 places, all below massif's threshold (1.00%)
+     n0: 47200 in 3 places, all below massif's threshold (1.00%)
+    n0: 57720 in 3 places, all below massif's threshold (1.00%)
+   n1: 33080 0x10998C: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n0: 33080 in 4 places, all below massif's threshold (1.00%)
+   n0: 31520 in 2 places, all below massif's threshold (1.00%)
+ n2: 55936 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 54304 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 54304 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 54304 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 54304 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8097 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=15
+#-----------
+time=21251369
+mem_heap_B=3322757
+mem_heap_extra_B=156955
+mem_stacks_B=0
+heap_tree=detailed
+n4: 3322757 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 2956800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 2915200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 2915200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 2915200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 2915200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 40000 0x10A13B: page_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 40000 0x10A5C1: read_pages_name (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 40000 0x109F62: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 40000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1600 in 1 place, below massif's threshold (1.00%)
+ n1: 297920 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 297920 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 229400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 168120 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 117680 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 78800 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 50400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 50400 in 4 places, all below massif's threshold (1.00%)
+       n0: 28400 in 3 places, all below massif's threshold (1.00%)
+      n0: 38880 in 3 places, all below massif's threshold (1.00%)
+     n0: 50440 in 3 places, all below massif's threshold (1.00%)
+    n0: 61280 in 3 places, all below massif's threshold (1.00%)
+   n0: 68520 in 3 places, all below massif's threshold (1.00%)
+ n2: 59936 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 58304 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 58304 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 58304 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 58304 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8101 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=22808965
+mem_heap_B=3514565
+mem_heap_extra_B=164915
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=23854966
+mem_heap_B=3682918
+mem_heap_extra_B=171122
+mem_stacks_B=0
+heap_tree=detailed
+n4: 3682918 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 3283200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 3241600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 3241600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 3241600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 3241600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 40000 0x10A13B: page_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 40000 0x10A5C1: read_pages_name (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 40000 0x109F62: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 40000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1600 in 1 place, below massif's threshold (1.00%)
+ n1: 325160 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 325160 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 250280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 183440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 127960 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 85400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 54600 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 54600 in 4 places, all below massif's threshold (1.00%)
+       n0: 30800 in 3 places, all below massif's threshold (1.00%)
+      n0: 42560 in 3 places, all below massif's threshold (1.00%)
+     n0: 55480 in 3 places, all below massif's threshold (1.00%)
+    n0: 66840 in 3 places, all below massif's threshold (1.00%)
+   n0: 74880 in 3 places, all below massif's threshold (1.00%)
+ n2: 66464 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 64832 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 64832 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 64832 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 64832 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8094 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=18
+#-----------
+time=25204456
+mem_heap_B=3878379
+mem_heap_extra_B=178005
+mem_stacks_B=0
+heap_tree=detailed
+n4: 3878379 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 3462400 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 3420800 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 3420800 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 3420800 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 3420800 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 337840 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 337840 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 259400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 190040 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 132480 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 88320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 56400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 56400 in 4 places, all below massif's threshold (1.00%)
+       n0: 31920 in 3 places, all below massif's threshold (1.00%)
+      n0: 44160 in 3 places, all below massif's threshold (1.00%)
+     n0: 57560 in 3 places, all below massif's threshold (1.00%)
+    n0: 69360 in 3 places, all below massif's threshold (1.00%)
+   n0: 78440 in 3 places, all below massif's threshold (1.00%)
+ n2: 70048 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 68416 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 68416 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 68416 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 68416 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8091 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=26310759
+mem_heap_B=4033441
+mem_heap_extra_B=183983
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=27308323
+mem_heap_B=4121565
+mem_heap_extra_B=187387
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4121565 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 3683200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 3641600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 3641600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 3641600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 3641600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 355800 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 355800 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 272720 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 199320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 138080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 91600 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 58080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 58080 in 4 places, all below massif's threshold (1.00%)
+       n0: 33520 in 3 places, all below massif's threshold (1.00%)
+      n0: 46480 in 3 places, all below massif's threshold (1.00%)
+     n0: 61240 in 3 places, all below massif's threshold (1.00%)
+    n0: 73400 in 3 places, all below massif's threshold (1.00%)
+   n0: 83080 in 3 places, all below massif's threshold (1.00%)
+ n2: 74464 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 72832 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 72832 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 72832 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 72832 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8101 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=28706540
+mem_heap_B=4276881
+mem_heap_extra_B=192815
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=30162364
+mem_heap_B=4466137
+mem_heap_extra_B=199743
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=30978371
+mem_heap_B=4561305
+mem_heap_extra_B=203423
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=32795718
+mem_heap_B=4798913
+mem_heap_extra_B=213135
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=34078997
+mem_heap_B=4954816
+mem_heap_extra_B=219488
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4954816 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 4440000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 4398400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 4398400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 4398400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 4398400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 417120 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 417120 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 319280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 233080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 161200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 106800 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 67640 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 67640 in 4 places, all below massif's threshold (1.00%)
+       n0: 39160 in 3 places, all below massif's threshold (1.00%)
+      n0: 54400 in 3 places, all below massif's threshold (1.00%)
+     n0: 71880 in 3 places, all below massif's threshold (1.00%)
+    n0: 86200 in 3 places, all below massif's threshold (1.00%)
+   n0: 97840 in 3 places, all below massif's threshold (1.00%)
+ n2: 89600 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 87968 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 87968 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 87968 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 87968 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8096 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=34913218
+mem_heap_B=5110014
+mem_heap_extra_B=224258
+mem_stacks_B=0
+heap_tree=detailed
+n4: 5110014 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 4584000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 4542400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 4542400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 4542400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 4542400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 425440 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 425440 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 324920 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 236760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 163400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 108280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 68640 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 68640 in 4 places, all below massif's threshold (1.00%)
+       n0: 39640 in 3 places, all below massif's threshold (1.00%)
+      n0: 55120 in 3 places, all below massif's threshold (1.00%)
+     n0: 73360 in 3 places, all below massif's threshold (1.00%)
+    n0: 88160 in 3 places, all below massif's threshold (1.00%)
+   n0: 100520 in 3 places, all below massif's threshold (1.00%)
+ n2: 92480 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 90848 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 90848 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 90848 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 90848 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8094 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=27
+#-----------
+time=36439035
+mem_heap_B=5303921
+mem_heap_extra_B=231103
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=37442158
+mem_heap_B=5376996
+mem_heap_extra_B=233612
+mem_stacks_B=0
+heap_tree=detailed
+n4: 5376996 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 4828800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 4787200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 4787200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 4787200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 4787200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 442720 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 442720 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 337720 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 245800 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 169640 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 112360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 71160 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 71160 in 4 places, all below massif's threshold (1.00%)
+       n0: 41200 in 3 places, all below massif's threshold (1.00%)
+      n0: 57280 in 3 places, all below massif's threshold (1.00%)
+     n0: 76160 in 3 places, all below massif's threshold (1.00%)
+    n0: 91920 in 3 places, all below massif's threshold (1.00%)
+   n0: 105000 in 3 places, all below massif's threshold (1.00%)
+ n2: 97376 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 95744 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 95744 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 95744 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 95744 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8100 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=29
+#-----------
+time=38691516
+mem_heap_B=5465657
+mem_heap_extra_B=236575
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=40322862
+mem_heap_B=5600637
+mem_heap_extra_B=240931
+mem_stacks_B=0
+heap_tree=detailed
+n4: 5600637 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 5035200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 4993600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 4993600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 4993600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 4993600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 455840 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 455840 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 347000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 251760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 173240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 114200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 72000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 72000 in 4 places, all below massif's threshold (1.00%)
+       n0: 42200 in 3 places, all below massif's threshold (1.00%)
+      n0: 59040 in 3 places, all below massif's threshold (1.00%)
+     n0: 78520 in 3 places, all below massif's threshold (1.00%)
+    n0: 95240 in 3 places, all below massif's threshold (1.00%)
+   n0: 108840 in 3 places, all below massif's threshold (1.00%)
+ n2: 101504 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 99872 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 99872 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 99872 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 99872 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8093 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=41730951
+mem_heap_B=5753945
+mem_heap_extra_B=247455
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=43651771
+mem_heap_B=6073740
+mem_heap_extra_B=259500
+mem_stacks_B=0
+heap_tree=detailed
+n4: 6073740 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 5464000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 5422400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 5422400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 5422400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 5422400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 491560 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 491560 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 374240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 271280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 186520 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 122880 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 77320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 77320 in 4 places, all below massif's threshold (1.00%)
+       n0: 45560 in 3 places, all below massif's threshold (1.00%)
+      n0: 63640 in 3 places, all below massif's threshold (1.00%)
+     n0: 84760 in 3 places, all below massif's threshold (1.00%)
+    n0: 102960 in 3 places, all below massif's threshold (1.00%)
+   n0: 117320 in 3 places, all below massif's threshold (1.00%)
+ n2: 110080 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 108448 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 108448 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 108448 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 108448 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8100 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=33
+#-----------
+time=44759793
+mem_heap_B=6163753
+mem_heap_extra_B=262367
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=46560196
+mem_heap_B=6389676
+mem_heap_extra_B=272524
+mem_stacks_B=0
+heap_tree=detailed
+n4: 6389676 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 5748800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 5707200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 5707200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 5707200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 5707200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 517000 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 517000 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 394360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 286840 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 198000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 131240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 83360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 83360 in 4 places, all below massif's threshold (1.00%)
+       n0: 47880 in 3 places, all below massif's threshold (1.00%)
+      n0: 66760 in 3 places, all below massif's threshold (1.00%)
+     n0: 88840 in 3 places, all below massif's threshold (1.00%)
+    n0: 107520 in 3 places, all below massif's threshold (1.00%)
+   n0: 122640 in 3 places, all below massif's threshold (1.00%)
+ n2: 115776 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 114144 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 114144 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 114144 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 114144 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8100 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=47527356
+mem_heap_B=6518770
+mem_heap_extra_B=277678
+mem_stacks_B=0
+heap_tree=detailed
+n4: 6518770 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 5865600 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 5824000 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 5824000 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 5824000 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 5824000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 526960 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 526960 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 401760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 292080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 201480 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 133160 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 84400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 84400 in 4 places, all below massif's threshold (1.00%)
+       n0: 48760 in 3 places, all below massif's threshold (1.00%)
+      n0: 68320 in 3 places, all below massif's threshold (1.00%)
+     n0: 90600 in 3 places, all below massif's threshold (1.00%)
+    n0: 109680 in 3 places, all below massif's threshold (1.00%)
+   n0: 125200 in 3 places, all below massif's threshold (1.00%)
+ n2: 118112 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 116480 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 116480 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 116480 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 116480 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8098 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=36
+#-----------
+time=49260393
+mem_heap_B=6787987
+mem_heap_extra_B=287933
+mem_stacks_B=0
+heap_tree=detailed
+n4: 6787987 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 6110400 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 6068800 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 6068800 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 6068800 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 6068800 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 546480 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 546480 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 416320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 302320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 208200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 137080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 86640 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 86640 in 4 places, all below massif's threshold (1.00%)
+       n0: 50440 in 3 places, all below massif's threshold (1.00%)
+      n0: 71120 in 3 places, all below massif's threshold (1.00%)
+     n0: 94120 in 3 places, all below massif's threshold (1.00%)
+    n0: 114000 in 3 places, all below massif's threshold (1.00%)
+   n0: 130160 in 3 places, all below massif's threshold (1.00%)
+ n2: 123008 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 121376 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 121376 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 121376 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 121376 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8099 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=37
+#-----------
+time=50431717
+mem_heap_B=6914361
+mem_heap_extra_B=292631
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=52109023
+mem_heap_B=7067433
+mem_heap_extra_B=298463
+mem_stacks_B=0
+heap_tree=detailed
+n4: 7067433 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 6364800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 6323200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 6323200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 6323200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 6323200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 566440 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 566440 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 431280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 313000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 215280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 141560 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 89240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 89240 in 4 places, all below massif's threshold (1.00%)
+       n0: 52320 in 3 places, all below massif's threshold (1.00%)
+      n0: 73720 in 3 places, all below massif's threshold (1.00%)
+     n0: 97720 in 3 places, all below massif's threshold (1.00%)
+    n0: 118280 in 3 places, all below massif's threshold (1.00%)
+   n0: 135160 in 3 places, all below massif's threshold (1.00%)
+ n2: 128096 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 126464 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 126464 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 126464 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 126464 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8097 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=39
+#-----------
+time=54153824
+mem_heap_B=7212617
+mem_heap_extra_B=304319
+mem_stacks_B=0
+heap_tree=detailed
+n4: 7212617 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 6496000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 6454400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 6454400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 6454400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 6454400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 577800 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 577800 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 440080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 319320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 219600 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 144320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 91000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 91000 in 4 places, all below massif's threshold (1.00%)
+       n0: 53320 in 3 places, all below massif's threshold (1.00%)
+      n0: 75280 in 3 places, all below massif's threshold (1.00%)
+     n0: 99720 in 3 places, all below massif's threshold (1.00%)
+    n0: 120760 in 3 places, all below massif's threshold (1.00%)
+   n0: 137720 in 3 places, all below massif's threshold (1.00%)
+ n2: 130720 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 129088 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 129088 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 129088 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 129088 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8097 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=55515370
+mem_heap_B=7326809
+mem_heap_extra_B=308575
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=56436687
+mem_heap_B=7399433
+mem_heap_extra_B=310879
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=57790760
+mem_heap_B=7470157
+mem_heap_extra_B=313691
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=59287898
+mem_heap_B=7731385
+mem_heap_extra_B=331599
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=61123896
+mem_heap_B=7927593
+mem_heap_extra_B=337487
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=62313168
+mem_heap_B=8056048
+mem_heap_extra_B=341760
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8056048 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 7249600 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 7208000 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 7208000 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 7208000 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 7208000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 652560 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 652560 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 500880 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 368160 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 258520 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 175040 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 116280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 116280 in 4 places, all below massif's threshold (1.00%)
+       n0: 58760 in 3 places, all below massif's threshold (1.00%)
+      n0: 83480 in 3 places, all below massif's threshold (1.00%)
+     n0: 109640 in 3 places, all below massif's threshold (1.00%)
+    n0: 132720 in 3 places, all below massif's threshold (1.00%)
+   n0: 151680 in 3 places, all below massif's threshold (1.00%)
+ n2: 145792 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 144160 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 144160 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 144160 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 144160 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8096 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=46
+#-----------
+time=63388519
+mem_heap_B=8138311
+mem_heap_extra_B=344737
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8138311 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 7324800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 7283200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 7283200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 7283200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 7283200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 658120 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 658120 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 505080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 371240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 260640 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 176360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 117080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 117080 in 4 places, all below massif's threshold (1.00%)
+       n0: 59280 in 3 places, all below massif's threshold (1.00%)
+      n0: 84280 in 3 places, all below massif's threshold (1.00%)
+     n0: 110600 in 3 places, all below massif's threshold (1.00%)
+    n0: 133840 in 3 places, all below massif's threshold (1.00%)
+   n0: 153040 in 3 places, all below massif's threshold (1.00%)
+ n2: 147296 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 145664 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 145664 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 145664 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 145664 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8095 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=64386914
+mem_heap_B=8220938
+mem_heap_extra_B=347854
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8220938 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 7400000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 7358400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 7358400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 7358400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 7358400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 664040 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 664040 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 509480 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 374280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 262560 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 177480 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 117640 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 117640 in 4 places, all below massif's threshold (1.00%)
+       n0: 59840 in 3 places, all below massif's threshold (1.00%)
+      n0: 85080 in 3 places, all below massif's threshold (1.00%)
+     n0: 111720 in 3 places, all below massif's threshold (1.00%)
+    n0: 135200 in 3 places, all below massif's threshold (1.00%)
+   n0: 154560 in 3 places, all below massif's threshold (1.00%)
+ n2: 148800 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 147168 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 147168 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 147168 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 147168 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8098 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=48
+#-----------
+time=65912628
+mem_heap_B=8387049
+mem_heap_extra_B=353791
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=67771299
+mem_heap_B=8647935
+mem_heap_extra_B=362641
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8647935 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 7792000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 7750400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 7750400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 7750400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 7750400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 691200 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 691200 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 529320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 387320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 270640 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 182360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 120360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 120360 in 4 places, all below massif's threshold (1.00%)
+       n0: 62000 in 3 places, all below massif's threshold (1.00%)
+      n0: 88280 in 3 places, all below massif's threshold (1.00%)
+     n0: 116680 in 3 places, all below massif's threshold (1.00%)
+    n0: 142000 in 3 places, all below massif's threshold (1.00%)
+   n0: 161880 in 3 places, all below massif's threshold (1.00%)
+ n2: 156640 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 155008 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 155008 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 155008 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 155008 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8095 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=68587545
+mem_heap_B=8716769
+mem_heap_extra_B=364687
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=68856313
+mem_heap_B=8736369
+mem_heap_extra_B=365535
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8736369 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 7873600 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 7832000 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 7832000 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 7832000 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 7832000 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 696400 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 696400 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 533240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 390080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 272360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 183400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 121040 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 121040 in 4 places, all below massif's threshold (1.00%)
+       n0: 62360 in 3 places, all below massif's threshold (1.00%)
+      n0: 88960 in 3 places, all below massif's threshold (1.00%)
+     n0: 117720 in 3 places, all below massif's threshold (1.00%)
+    n0: 143160 in 3 places, all below massif's threshold (1.00%)
+   n0: 163160 in 3 places, all below massif's threshold (1.00%)
+ n2: 158272 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 156640 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 156640 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 156640 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 156640 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8097 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=69672749
+mem_heap_B=8795809
+mem_heap_extra_B=367647
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=70098766
+mem_heap_B=8825563
+mem_heap_extra_B=368733
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8825563 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 7955200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 7913600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 7913600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 7913600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 7913600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 702360 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 702360 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 537680 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 393160 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 274440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 184800 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 122000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 122000 in 4 places, all below massif's threshold (1.00%)
+       n0: 62800 in 3 places, all below massif's threshold (1.00%)
+      n0: 89640 in 3 places, all below massif's threshold (1.00%)
+     n0: 118720 in 3 places, all below massif's threshold (1.00%)
+    n0: 144520 in 3 places, all below massif's threshold (1.00%)
+   n0: 164680 in 3 places, all below massif's threshold (1.00%)
+ n2: 159904 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 158272 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 158272 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 158272 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 158272 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8099 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=54
+#-----------
+time=70915169
+mem_heap_B=8894481
+mem_heap_extra_B=371455
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=71068057
+mem_heap_B=8914721
+mem_heap_extra_B=372559
+mem_stacks_B=0
+heap_tree=detailed
+n4: 8914721 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8035200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 7993600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 7993600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 7993600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 7993600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 709920 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 709920 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 543480 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 397400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 277280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 186440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 122720 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 122720 in 4 places, all below massif's threshold (1.00%)
+       n0: 63720 in 3 places, all below massif's threshold (1.00%)
+      n0: 90840 in 3 places, all below massif's threshold (1.00%)
+     n0: 120120 in 3 places, all below massif's threshold (1.00%)
+    n0: 146080 in 3 places, all below massif's threshold (1.00%)
+   n0: 166440 in 3 places, all below massif's threshold (1.00%)
+ n2: 161504 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 159872 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 159872 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 159872 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 159872 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8097 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=56
+#-----------
+time=71884848
+mem_heap_B=8989377
+mem_heap_extra_B=375663
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=72101707
+mem_heap_B=9004914
+mem_heap_extra_B=376158
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9004914 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8116800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8075200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8075200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8075200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8075200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 716880 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 716880 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 548960 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 401600 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 280440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 188760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 124280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 124280 in 4 places, all below massif's threshold (1.00%)
+       n0: 64480 in 3 places, all below massif's threshold (1.00%)
+      n0: 91680 in 3 places, all below massif's threshold (1.00%)
+     n0: 121160 in 3 places, all below massif's threshold (1.00%)
+    n0: 147360 in 3 places, all below massif's threshold (1.00%)
+   n0: 167920 in 3 places, all below massif's threshold (1.00%)
+ n2: 163136 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 161504 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 161504 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 161504 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 161504 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8098 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=58
+#-----------
+time=72918004
+mem_heap_B=9070849
+mem_heap_extra_B=378959
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=73261649
+mem_heap_B=9096579
+mem_heap_extra_B=379709
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9096579 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8200000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8158400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8158400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8158400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8158400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 723680 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 723680 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 554400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 406040 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 284000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 191640 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 126680 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 126680 in 4 places, all below massif's threshold (1.00%)
+       n0: 64960 in 3 places, all below massif's threshold (1.00%)
+      n0: 92360 in 3 places, all below massif's threshold (1.00%)
+     n0: 122040 in 3 places, all below massif's threshold (1.00%)
+    n0: 148360 in 3 places, all below massif's threshold (1.00%)
+   n0: 169280 in 3 places, all below massif's threshold (1.00%)
+ n2: 164800 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 163168 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 163168 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 163168 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 163168 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8099 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=74079239
+mem_heap_B=9153663
+mem_heap_extra_B=381529
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=74552948
+mem_heap_B=9188436
+mem_heap_extra_B=382700
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9188436 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8284800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8243200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8243200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8243200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8243200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 729040 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 729040 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 558080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 408360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 285440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 192520 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 127200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 127200 in 4 places, all below massif's threshold (1.00%)
+       n0: 65320 in 3 places, all below massif's threshold (1.00%)
+      n0: 92920 in 3 places, all below massif's threshold (1.00%)
+     n0: 122920 in 3 places, all below massif's threshold (1.00%)
+    n0: 149720 in 3 places, all below massif's threshold (1.00%)
+   n0: 170960 in 3 places, all below massif's threshold (1.00%)
+ n2: 166496 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 164864 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 164864 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 164864 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 164864 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8100 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=62
+#-----------
+time=75369931
+mem_heap_B=9238233
+mem_heap_extra_B=384143
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=75940259
+mem_heap_B=9281845
+mem_heap_extra_B=385675
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9281845 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8371200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8329600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8329600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8329600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8329600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 734320 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 734320 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 561840 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 411000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 287120 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 193480 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 127680 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 127680 in 4 places, all below massif's threshold (1.00%)
+       n0: 65800 in 3 places, all below massif's threshold (1.00%)
+      n0: 93640 in 3 places, all below massif's threshold (1.00%)
+     n0: 123880 in 3 places, all below massif's threshold (1.00%)
+    n0: 150840 in 3 places, all below massif's threshold (1.00%)
+   n0: 172480 in 3 places, all below massif's threshold (1.00%)
+ n2: 168224 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 166592 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 166592 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 166592 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 166592 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8101 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=64
+#-----------
+time=76756398
+mem_heap_B=9345254
+mem_heap_extra_B=387482
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=77397247
+mem_heap_B=9376799
+mem_heap_extra_B=388641
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9376799 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8459200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8417600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8417600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8417600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8417600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 739520 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 739520 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 565320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 413160 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 288400 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 194320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 128240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 128240 in 4 places, all below massif's threshold (1.00%)
+       n0: 66080 in 3 places, all below massif's threshold (1.00%)
+      n0: 94080 in 3 places, all below massif's threshold (1.00%)
+     n0: 124760 in 3 places, all below massif's threshold (1.00%)
+    n0: 152160 in 3 places, all below massif's threshold (1.00%)
+   n0: 174200 in 3 places, all below massif's threshold (1.00%)
+ n2: 169984 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 168352 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 168352 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 168352 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 168352 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8095 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=66
+#-----------
+time=78186784
+mem_heap_B=9471581
+mem_heap_extra_B=392795
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9471581 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8544000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8502400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8502400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8502400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8502400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 747800 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 747800 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 571840 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 418080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 291960 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 196680 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 129800 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 129800 in 4 places, all below massif's threshold (1.00%)
+       n0: 66880 in 3 places, all below massif's threshold (1.00%)
+      n0: 95280 in 3 places, all below massif's threshold (1.00%)
+     n0: 126120 in 3 places, all below massif's threshold (1.00%)
+    n0: 153760 in 3 places, all below massif's threshold (1.00%)
+   n0: 175960 in 3 places, all below massif's threshold (1.00%)
+ n2: 171680 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 170048 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 170048 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 170048 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 170048 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8101 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=67
+#-----------
+time=78850804
+mem_heap_B=9566705
+mem_heap_extra_B=396463
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9566705 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8630400 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8588800 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8588800 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8588800 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8588800 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 754800 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 754800 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 577320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 422240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 294840 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 198320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 130760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 130760 in 4 places, all below massif's threshold (1.00%)
+       n0: 67560 in 3 places, all below massif's threshold (1.00%)
+      n0: 96520 in 3 places, all below massif's threshold (1.00%)
+     n0: 127400 in 3 places, all below massif's threshold (1.00%)
+    n0: 155080 in 3 places, all below massif's threshold (1.00%)
+   n0: 177480 in 3 places, all below massif's threshold (1.00%)
+ n2: 173408 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 171776 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 171776 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 171776 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 171776 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8097 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=79339879
+mem_heap_B=9662634
+mem_heap_extra_B=400446
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9662634 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8716800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8675200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8675200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8675200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8675200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 762600 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 762600 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 583440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 426800 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 297880 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 200200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 131800 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 131800 in 4 places, all below massif's threshold (1.00%)
+       n0: 68400 in 3 places, all below massif's threshold (1.00%)
+      n0: 97680 in 3 places, all below massif's threshold (1.00%)
+     n0: 128920 in 3 places, all below massif's threshold (1.00%)
+    n0: 156640 in 3 places, all below massif's threshold (1.00%)
+   n0: 179160 in 3 places, all below massif's threshold (1.00%)
+ n2: 175136 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 173504 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 173504 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 173504 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 173504 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8098 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=69
+#-----------
+time=79917226
+mem_heap_B=9759872
+mem_heap_extra_B=404320
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9759872 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8804800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8763200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8763200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8763200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8763200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 770080 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 770080 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 589320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 431280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 301000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 202280 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 133120 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 133120 in 4 places, all below massif's threshold (1.00%)
+       n0: 69160 in 3 places, all below massif's threshold (1.00%)
+      n0: 98720 in 3 places, all below massif's threshold (1.00%)
+     n0: 130280 in 3 places, all below massif's threshold (1.00%)
+    n0: 158040 in 3 places, all below massif's threshold (1.00%)
+   n0: 180760 in 3 places, all below massif's threshold (1.00%)
+ n2: 176896 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 175264 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 175264 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 175264 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 175264 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8096 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=70
+#-----------
+time=80493218
+mem_heap_B=9858433
+mem_heap_extra_B=408719
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9858433 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8892800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8851200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8851200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8851200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8851200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 778880 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 778880 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 596240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 436560 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 304760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 204920 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 134920 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 134920 in 4 places, all below massif's threshold (1.00%)
+       n0: 70000 in 3 places, all below massif's threshold (1.00%)
+      n0: 99840 in 3 places, all below massif's threshold (1.00%)
+     n0: 131800 in 3 places, all below massif's threshold (1.00%)
+    n0: 159680 in 3 places, all below massif's threshold (1.00%)
+   n0: 182640 in 3 places, all below massif's threshold (1.00%)
+ n2: 178656 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 177024 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 177024 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 177024 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 177024 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8097 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=71
+#-----------
+time=81030833
+mem_heap_B=9958424
+mem_heap_extra_B=413056
+mem_stacks_B=0
+heap_tree=detailed
+n4: 9958424 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 8982400 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 8940800 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 8940800 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 8940800 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 8940800 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 787480 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 787480 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 602960 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 441640 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 308320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 207360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 136480 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 136480 in 4 places, all below massif's threshold (1.00%)
+       n0: 70880 in 3 places, all below massif's threshold (1.00%)
+      n0: 100960 in 3 places, all below massif's threshold (1.00%)
+     n0: 133320 in 3 places, all below massif's threshold (1.00%)
+    n0: 161320 in 3 places, all below massif's threshold (1.00%)
+   n0: 184520 in 3 places, all below massif's threshold (1.00%)
+ n2: 180448 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 178816 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 178816 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 178816 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 178816 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8096 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=72
+#-----------
+time=81640478
+mem_heap_B=10057624
+mem_heap_extra_B=417712
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10057624 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 9070400 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 9028800 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 9028800 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 9028800 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 9028800 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 796920 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 796920 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 610440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 447240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 312200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 209880 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 138040 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 138040 in 4 places, all below massif's threshold (1.00%)
+       n0: 71840 in 3 places, all below massif's threshold (1.00%)
+      n0: 102320 in 3 places, all below massif's threshold (1.00%)
+     n0: 135040 in 3 places, all below massif's threshold (1.00%)
+    n0: 163200 in 3 places, all below massif's threshold (1.00%)
+   n0: 186480 in 3 places, all below massif's threshold (1.00%)
+ n2: 182208 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 180576 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 180576 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 180576 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 180576 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8096 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=73
+#-----------
+time=82321429
+mem_heap_B=10158856
+mem_heap_extra_B=422544
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10158856 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 9160000 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 9118400 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 9118400 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 9118400 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 9118400 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 806760 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 806760 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 618440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 453600 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 317240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 213760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 140960 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 140960 in 4 places, all below massif's threshold (1.00%)
+       n0: 72800 in 3 places, all below massif's threshold (1.00%)
+      n0: 103480 in 3 places, all below massif's threshold (1.00%)
+     n0: 136360 in 3 places, all below massif's threshold (1.00%)
+    n0: 164840 in 3 places, all below massif's threshold (1.00%)
+   n0: 188320 in 3 places, all below massif's threshold (1.00%)
+ n2: 184000 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 182368 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 182368 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 182368 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 182368 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8096 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=74
+#-----------
+time=83138203
+mem_heap_B=10230121
+mem_heap_extra_B=424927
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=83416046
+mem_heap_B=10261543
+mem_heap_extra_B=426049
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10261543 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 9254400 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 9212800 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 9212800 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 9212800 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 9212800 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 813160 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 813160 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 623120 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 456840 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 319360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 215080 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 141800 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 141800 in 4 places, all below massif's threshold (1.00%)
+       n0: 73280 in 3 places, all below massif's threshold (1.00%)
+      n0: 104280 in 3 places, all below massif's threshold (1.00%)
+     n0: 137480 in 3 places, all below massif's threshold (1.00%)
+    n0: 166280 in 3 places, all below massif's threshold (1.00%)
+   n0: 190040 in 3 places, all below massif's threshold (1.00%)
+ n2: 185888 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 184256 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 184256 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 184256 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 184256 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8095 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=76
+#-----------
+time=84233340
+mem_heap_B=10331737
+mem_heap_extra_B=428639
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=84668987
+mem_heap_B=10365551
+mem_heap_extra_B=430081
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10365551 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 9348800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 9307200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 9307200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 9307200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 9307200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 820880 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 820880 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 629000 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 461240 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 322600 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 217360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 143360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 143360 in 4 places, all below massif's threshold (1.00%)
+       n0: 74000 in 3 places, all below massif's threshold (1.00%)
+      n0: 105240 in 3 places, all below massif's threshold (1.00%)
+     n0: 138640 in 3 places, all below massif's threshold (1.00%)
+    n0: 167760 in 3 places, all below massif's threshold (1.00%)
+   n0: 191880 in 3 places, all below massif's threshold (1.00%)
+ n2: 187776 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 186144 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 186144 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 186144 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 186144 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8095 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=78
+#-----------
+time=85485900
+mem_heap_B=10448249
+mem_heap_extra_B=433215
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=85782608
+mem_heap_B=10469686
+mem_heap_extra_B=434154
+mem_stacks_B=0
+heap_tree=detailed
+n4: 10469686 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 9443200 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 9401600 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 9401600 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 9401600 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 9401600 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 828720 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 828720 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 634920 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 465440 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 325320 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 219040 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 144360 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 144360 in 4 places, all below massif's threshold (1.00%)
+       n0: 74680 in 3 places, all below massif's threshold (1.00%)
+      n0: 106280 in 3 places, all below massif's threshold (1.00%)
+     n0: 140120 in 3 places, all below massif's threshold (1.00%)
+    n0: 169480 in 3 places, all below massif's threshold (1.00%)
+   n0: 193800 in 3 places, all below massif's threshold (1.00%)
+ n2: 189664 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 188032 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 188032 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 188032 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 188032 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8102 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=80
+#-----------
+time=86599920
+mem_heap_B=10550223
+mem_heap_extra_B=437081
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=86861045
+mem_heap_B=10576432
+mem_heap_extra_B=438016
+mem_stacks_B=0
+heap_tree=peak
+n4: 10576432 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 9540800 0x1093AB: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 9499200 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 9499200 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 9499200 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 9499200 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 41600 in 2 places, all below massif's threshold (1.00%)
+ n1: 835920 0x109821: new_node (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n2: 835920 0x109910: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n2: 640120 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n2: 469040 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n2: 327760 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+      n2: 220520 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+       n1: 145200 0x1099CF: rec_put (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+        n0: 145200 in 4 places, all below massif's threshold (1.00%)
+       n0: 75320 in 3 places, all below massif's threshold (1.00%)
+      n0: 107240 in 3 places, all below massif's threshold (1.00%)
+     n0: 141280 in 3 places, all below massif's threshold (1.00%)
+    n0: 171080 in 3 places, all below massif's threshold (1.00%)
+   n0: 195800 in 3 places, all below massif's threshold (1.00%)
+ n2: 191616 0x109395: vector_create (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n1: 189984 0x10A91E: read_page_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+   n1: 189984 0x10A6CF: read_terms (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+    n1: 189984 0x109F94: system_init (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+     n0: 189984 0x109611: main (in /mnt/c/Users/marin/OneDrive/Documentos/periodos/05-quinto-periodo/tecnicas-de-busca-e-ordenacao/trabalho-2/Trabalho-TBO-2/trab2)
+  n0: 1632 in 2 places, all below massif's threshold (1.00%)
+ n0: 8096 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=82
+#-----------
+time=87677746
+mem_heap_B=10629377
+mem_heap_extra_B=439439
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=88494434
+mem_heap_B=10666357
+mem_heap_extra_B=440867
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=89311522
+mem_heap_B=10666357
+mem_heap_extra_B=440867
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=90127575
+mem_heap_B=8847178
+mem_heap_extra_B=361014
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=90943675
+mem_heap_B=5566898
+mem_heap_extra_B=227614
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=91759697
+mem_heap_B=2181434
+mem_heap_extra_B=94174
+mem_stacks_B=0
+heap_tree=empty

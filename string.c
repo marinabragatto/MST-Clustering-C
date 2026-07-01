@@ -4,51 +4,48 @@
 #include <stdio.h>
 #include <ctype.h>
 
- struct String{
-    char * c;
-    int len;
- };
 
 
 String * string_create(char * c){
-    String * s = (String*)malloc(sizeof(String));
     
-    s->c = strdup(c);
-    s->len = strlen(c);
+    char * s = strdup(c);
 
     return s;
 }
 
 void string_print(void * string){
-    printf("(%s)\n",((String*)string)->c);
+    printf("(%s)\n", (char*)string);
+}
+void string_print_v2(void * string){
+    printf("%s",(char*)string);
 }
 
 int string_get_len(String* string){
-    return string->len;
+    return strlen(string);
 }
 
 char * string_get_char_pointer(String* string, int d){ // tem que verifcar se ta dentro do len para nao fazer mem
-    return string->c + d;
+    return string + d;
 }
 
 char  string_get_character(String* string, int d){ // tem que verifcar se ta dentro do len para nao fazer mem
-    return string->c[d];
+    return string[d];
 }
 
 void string_tolower(String * string){
 
-    for(int i = 0; i < string->len ; i++){
-        string->c[i] = tolower((unsigned char)string->c[i]);
+    for(int i = 0; i < strlen(string) ; i++){
+        string[i] = tolower((unsigned char)string[i]);
     }
 }
 
 int compare_from(String *s,String *t,int d){
-    int min=s->len<t->len?s->len:t->len;
+    int min= strlen(s) < strlen(t) ? strlen(s) : strlen(t);
     for(int i=d; i < min; i++){
-    if (s->c[i]<t->c[i]){ return-1;}
-    if (s->c[i]>t->c[i]){ return 1;}
+    if (s[i]<t[i]){ return-1;}
+    if (s[i]>t[i]){ return 1;}
     }
-    return s->len- t->len;
+    return strlen(s)- strlen(t);
 }
 
 int compare(String *s,String *t){
@@ -57,9 +54,5 @@ int compare(String *s,String *t){
 
 void string_destroy(void * string){
     String * string_ptr = (String*)string;
-    if(string_ptr){
-        if(string_ptr->c)
-            free(string_ptr->c);
-        free(string_ptr);
-    }   
+    free(string_ptr);
 }

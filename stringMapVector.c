@@ -1,4 +1,4 @@
-#include "string_map_vector.h"
+#include "stringMapVector.h"
 
 struct StringMapVector{
     ST * string_idx; // dado o nome de uma pagina, em que indice do vetor ela se encontra
