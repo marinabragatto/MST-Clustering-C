@@ -8,12 +8,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
-
 char * define_directory_path(char * dir, const char * sub_dir);
-
-
-void print_char(void * s);
-
 
 #endif

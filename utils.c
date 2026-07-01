@@ -10,7 +10,3 @@ char * define_directory_path(char * dir, const char * sub_dir){
 }
 
 
-void print_char(void * s){
-    char * s_ptr = (char*)s;
-    printf("(%s)\n",s_ptr);
-}

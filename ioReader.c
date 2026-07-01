@@ -197,22 +197,25 @@ void read_pages_graph(char * dir, StringMapVector * pages){
     fclose(fp);
 
 }
-Search * search_read(ST * stopwords){
+Search * search_read_print(ST * stopwords){
     // o caractere de fim de arquivo seja lido.
     // precisa ler ate o fim de um arquivo na verdade
     Search * se = search_create();
-    
     char string[STRING_SZ];
     char c;
+    int iteration = 0;
     while(scanf("%199s",string) == 1){
-        // String * word = string_create(string);
-        if(!ST_get(stopwords, string)){ // acho que nao precisa fazer, mas por enquanto vou deixar
-        // é que sempre que fazer o get na sys->term_list, vai retornar nada
-            String * word = string_create(string); // faz o malloc so se precsa
-            search_insert_word(se,word);
+        if(iteration == 0){
+            printf("search:");
+            iteration++;
         }
-        else{
-            // string_destroy(word);
+        
+        printf(" ");
+        string_print_v2(string);
+        if(!ST_get(stopwords, string)){ // acho que nao precisa fazer, mas por enquanto vou deixar
+            String * word = string_create(string); // faz o malloc so se precsa
+            // é que sempre que fazer o get na sys->term_list, vai retornar nada
+            search_insert_word(se,word);
         }
         
         if(scanf("%c", &c) != 1)
@@ -222,11 +225,11 @@ Search * search_read(ST * stopwords){
             break;
     }
 
-    if(search_num_words(se)== 0){
+    if(iteration==0){
         search_destroy(se);
         return NULL;
     }
+    printf("\n");
     
-
     return se;
 }

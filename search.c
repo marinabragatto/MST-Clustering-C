@@ -52,7 +52,6 @@ void search_destroy(Search * se){
     if(se){
         if(se->words)
             vector_destroy(se->words);
-            // se.
         free(se);
     }
 }

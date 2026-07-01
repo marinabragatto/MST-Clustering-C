@@ -13,6 +13,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 
 struct System{
@@ -21,17 +22,38 @@ struct System{
     StringMapVector * pages;
     char * exist;
 };
-
+#define ALFA 0.85
+static void page_rank_execute(StringMapVector * pages);
 static Vector *  system_process_search(System * sys, Vector * words);
 static Vector * system_find_smaller_vector(System * sys, Vector * words);
+void print_page_results(Vector * docs_answer);
 
-void print_pages(System * sys){
-    for(int i = 0; i < SMV_get_size(sys->pages) ; i++){
-        // ST_get(sys->page_idx_vector, )
-        print_page(SMV_get_by_idx(sys->pages, i));
-
+void print_page_results(Vector * docs_answer){
+    printf("pages:");
+    if(docs_answer){
+        vector_sort(docs_answer, page_compare);
+        for(int i = 0; i < vector_size(docs_answer); i++){
+            if(i > 0){
+                printf(" ");
+            }
+            print_page_v2(vector_get(docs_answer, i));
+        }
     }
+    printf("\n");
+    printf("pr:");
+    if(docs_answer){
+        for(int i = 0; i <  vector_size(docs_answer); i++){
+            if(i > 0){
+                printf(" ");
+            }
+            printf("%.17lf", page_get_pagerank(vector_get(docs_answer, i)));
+        }        
+    }
+    printf("\n");
 }
+
+
+
 
 
 
@@ -40,10 +62,8 @@ void print_pages(System * sys){
 System * system_init(char * dir){
     System * sys = (System*) malloc(sizeof(System));
 
-    sys->exist = string_create("1") ;// verificar se deu certo
-    // sys->exist = 
+    sys->exist = string_create("1") ;// verificar se deu certo o malloc
     sys->stop_words = read_stop_words(dir, sys->exist);
-    
     sys->pages = read_pages_name(dir);
     //print_pages(sys) ; // debug
     sys->term_list = read_terms(dir, sys->pages, sys->stop_words, sys->exist); /*debug esta dentro das funcoes*/
@@ -114,52 +134,85 @@ static Vector * system_process_search(System * sys, Vector * words){
 }
 
 void system_execute(System * sys){
-    Search * se; 
-    //int i = 0;
+    Search * se=NULL; 
+
     page_rank_execute(sys->pages);
-    while(se = search_read(sys->stop_words)){
-        //printf("search %d\n", i);
+    while(se = search_read_print(sys->stop_words)){
         Vector * words = search_get_words(se); // palavras da busca
         Vector * docs_answer = system_process_search(sys, words);
-
-        printf("search:");
-        //vector_print(words, string_print_v2);
-        for(int i = 0; i < vector_size(words); i++){
-            if(i > 0){
-                printf(" ");
-            }
-            string_print_v2(vector_get(words, i));
-        }
-        printf("\n");
-        printf("pages:");
-        if(docs_answer){
-            vector_sort(docs_answer, page_compare);
-            for(int i = 0; i < vector_size(docs_answer); i++){
-                if(i > 0){
-                    printf(" ");
-                }
-                print_page_v2(vector_get(docs_answer, i));
-            }
-            printf("\n");
-            printf("pr:");
-            for(int i = 0; i <  vector_size(docs_answer); i++){
-                if(i > 0){
-                    printf(" ");
-                }
-                printf("%.17lf", page_get_pagerank(vector_get(docs_answer, i)));
-            }
-            printf("\n");
-            vector_destroy(docs_answer);
-        }
-
-
+        print_page_results(docs_answer);
+        vector_destroy(docs_answer);
         search_destroy(se);
-        //i++;
     }
 
-    /// depois teria que ordenar aqui com base no page rank de alguma forma
-    // vai ter uma funcao que dado uma pagina computa o page rank dela, talvez vale a pena computar uma vez só e armazenar para nao ficar fazendo de novo toda vez.
 }
+
+
+static void page_rank_execute(StringMapVector * pages){
+    int size = SMV_get_size(pages); // n (formula): número total de páginas/documentos;
+    
+    double* pr_prev = malloc(size * sizeof(double));
+    double* pr_new = malloc(size * sizeof(double));
+
+    //Inicialização. No passo zero, o PageRank de cada página é inicializado de maneira uniforme: 1/n
+    double pr_initial = 1.0 / size; // evitar ficar repetindo a divisao no loop
+    for(int i = 0; i < size; i++){
+        pr_prev[i] = pr_initial;
+    }
+
+    // Laço de atualização. Na iteração k ≥ 1, o valor do PageRank é computado com base nos valores da iteração anterior:
+    double fixed_value = (1.0 - ALFA) / size;
+    double stop_cond = 0;
+    
+    do{
+        stop_cond = 0;
+        for(int i = 0; i < size; i++){
+            Page* pi = SMV_get_by_idx(pages, i);
+            Vector* in = page_get_in_page(pi);
+            int sz = vector_size(in);
+
+            double sum = 0.0;
+            for(int j = 0; j < sz; j++){
+                Page* pj = vector_get(in, j);
+                int idx_j = -1; // indice no vetor original de paginas
+                for(int k = 0; k < size; k++){
+                    if(SMV_get_by_idx(pages, k) == pj){
+                        idx_j = k;
+                        break;
+                    }
+                }
+                sum += pr_prev[idx_j] / page_get_out_number(pj);  // out_j > 0 sempre, nao precisa de verificao para a divisao
+            }
+
+            if(page_get_out_number(pi) != 0){
+                pr_new[i] = fixed_value + ALFA * sum;
+            }
+            else{ // n_out(i) eh zero
+                pr_new[i] = fixed_value + (ALFA * pr_prev[i]) + (ALFA * sum);
+            }
+            stop_cond += fabs(pr_new[i] - pr_prev[i]);
+        }
+
+        stop_cond = 1.0 / size *stop_cond;
+
+        // armezenar valores para a proxima iteração
+        // trocar os ponteiros funciona?
+        double *temp = pr_prev;
+        pr_prev = pr_new; // apos a ultima iteração, os valores corretos estarão no vetor pr_prev por causa da troca
+        pr_new = temp;
+        
+    }while(stop_cond >= 1e-6); // 10^-6 == 1e-6
+
+    // salvar os page ranks finais nas paginas
+    for(int i = 0; i < size; i++) {
+        Page* page = SMV_get_by_idx(pages, i);
+        page_set_pagerank(page, pr_prev[i]);
+    }
+
+    free(pr_prev);
+    free(pr_new);
+}
+
 
 
 void system_destroy(System * sys){
