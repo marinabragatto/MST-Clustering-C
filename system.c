@@ -28,10 +28,10 @@
 
 
 struct System{
-    ST * stop_words; // COLOCAR TIPO HASH!
-    ST * term_list; // termo -> lista de Pages que ele aparece
-    StringMapVector * pages;
-    char * exist;
+    ST * stop_words; /*Termos ignorados na busca*/
+    ST * term_list; /*Termo -> lista de Pages que ele aparece*/
+    StringMapVector * pages; 
+    char * exist; /*Marcador de Existência*/
 };
 #define ALFA 0.85
 static void page_rank_execute(StringMapVector * pages);
@@ -66,23 +66,20 @@ void print_page_results(Vector * docs_answer){
 }
 
 
-
-
-
-
-
-
 System * system_init(char * dir){
     System * sys = (System*) malloc(sizeof(System));
 
-    sys->exist = string_create("1") ;// verificar se deu certo o malloc
+    if(!sys){
+        perror("Erro ao realizar malloc");
+        exit(1);
+    }
+
+    sys->exist = string_create("1"); /* String que verifica a existencia de um elemento em uma SimbolTable*/
     sys->stop_words = read_stop_words(dir, sys->exist);
     sys->pages = read_pages_name(dir);
-    //print_pages(sys) ; // debug
-    sys->term_list = read_terms(dir, sys->pages, sys->stop_words, sys->exist); /*debug esta dentro das funcoes*/
+    sys->term_list = read_terms(dir, sys->pages, sys->stop_words, sys->exist);
+    read_pages_graph(dir, sys->pages); 
 
-    read_pages_graph(dir, sys->pages); /*debug esta dentro das funcoes*/
-    //print_pages(sys) ; // debug
     return sys;
 }
 
@@ -118,24 +115,21 @@ static Vector * system_find_smaller_vector(System * sys, Vector * words){
 }
 
 static Vector * system_process_search(System * sys, Vector * words){
-    // if(search_get_word(se)  != nao eh uma stop word)  //
 
-    // cada palavra tem um vetor associado
-    // ai teria que iterar sobre esses vetores e achar o minimo
-    Vector * smaller_vet =  system_find_smaller_vector(sys, words); // tratar se retornar null
+    Vector * smaller_vet =  system_find_smaller_vector(sys, words);
     // poderia por acaso ter um com tamanho 0? acho que sim
 
     // iterar sobre os documentos do smaller vet e verificar
     // saida vetor de documentos resposta do problema!
     Vector * output = NULL;
     if(smaller_vet){
-        output = vector_create(vector_size(smaller_vet), NULL); // 
-        // printf("smaller vet size : %d\n", vector_size(smaller_vet));
+        output = vector_create(vector_size(smaller_vet), NULL); 
         int size = vector_size(smaller_vet);
+        // Para cada Página do menor vetor
         for(int i = 0; i < size; i ++){
-            // printf("entrei looping\n");
-            // para cada documento, verificar se tem todos os termos da busca
+            /* Para cada documento, verificar se tem todos os termos da busca */ 
             Page * page = vector_get(smaller_vet, i);
+            // Verificar se ela tem todos os termos
             if(page_has_words(page, words, sys->stop_words)){
                 vector_insert(output, page);
             }
@@ -153,7 +147,7 @@ void system_execute(System * sys){
 
     page_rank_execute(sys->pages);
     while(se = search_read_print(sys->stop_words)){
-        Vector * words = search_get_words(se); // palavras da busca
+        Vector * words = search_get_words(se); // Palavras validas da busca
         Vector * docs_answer = system_process_search(sys, words);
         print_page_results(docs_answer);
         vector_destroy(docs_answer);
@@ -227,8 +221,6 @@ static void page_rank_execute(StringMapVector * pages){
     free(pr_prev);
     free(pr_new);
 }
-
-
 
 void system_destroy(System * sys){
     if(sys){

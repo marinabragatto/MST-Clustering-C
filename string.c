@@ -18,8 +18,11 @@
 
 
 String * string_create(char * c){
-    
     char * s = strdup(c);
+    if(!s){
+        perror("Erro ao realizar malloc");
+        exit(1);
+    }
 
     return s;
 }
