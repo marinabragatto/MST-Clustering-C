@@ -1,8 +1,8 @@
 /**
  * @file ioReader.c
  * @author Fabiola Meireles Vilaça - 2024102667
- *         Marina Bragatto ... - 
- * @brief 
+ *         Marina Bragatto Pereira - 2024102881 
+ * @brief Implementação de funções para a leitura dos arquivos de entrada.
  * @version 0.1
  * @date 2026-06-30
  * 
@@ -222,7 +222,9 @@ Search * search_read_print(ST * stopwords){
             iteration++;
         }
         
-        printf(" ");
+        else{
+            printf(" ");
+        }
         string_print_v2(string);
         if(!ST_get(stopwords, string)){ // acho que nao precisa fazer, mas por enquanto vou deixar
             String * word = string_create(string); // faz o malloc so se precsa
