@@ -1,3 +1,14 @@
+/**
+ * @file stringMapVector.c
+ * @author Fabiola Meireles Vilaça - 2024102667
+ *         Marina Bragatto ... - 
+ * @brief 
+ * @version 0.1
+ * @date 2026-06-30
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
 #include "stringMapVector.h"
 
 struct StringMapVector{

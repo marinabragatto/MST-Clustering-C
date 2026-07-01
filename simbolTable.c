@@ -1,3 +1,15 @@
+/**
+ * @file simbolTable.c
+ * @author Fabiola Meireles Vilaça - 2024102667
+ *         Marina Bragatto ... - 
+ * @brief 
+ * @version 0.1
+ * @date 2026-06-30
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
+
 // fazer tudo generico como indicado pelo prof
 // podemos fazer uma implementacao mais ok e no final do curso
 // como ele disse, vai ter a melhor estrutura para fazer 

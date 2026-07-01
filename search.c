@@ -1,3 +1,14 @@
+/**
+ * @file search.c
+ * @author Fabiola Meireles Vilaça - 2024102667
+ *         Marina Bragatto ... - 
+ * @brief 
+ * @version 0.1
+ * @date 2026-06-30
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
 #include "search.h"
 
 #include <stdio.h>
@@ -41,7 +52,8 @@ Vector * search_get_words(Search * se){
 
 void search_print(Search * se){
     printf("(\n");
-    for(int i = 0; i < vector_size(se->words); i++){
+    int size = vector_size(se->words);
+    for(int i = 0; i < size; i++){
         printf("\t");
         string_print(vector_get(se->words, i));
     }

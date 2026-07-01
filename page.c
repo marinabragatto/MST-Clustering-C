@@ -1,3 +1,14 @@
+/**
+ * @file page.c
+ * @author Fabiola Meireles Vilaça - 2024102667
+ *         Marina Bragatto ... - 
+ * @brief 
+ * @version 0.1
+ * @date 2026-06-30
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
 #include "page.h"
 #include <string.h>
 
@@ -55,7 +66,8 @@ int page_has_words(Page * page, Vector * words, ST* stop_words){
     /// a nossa tst da pagina, nao guarda se for uma stop word
     // talvez tem que verificar
     // printf("size das palavras da busca %d\n", vector_size(words));
-    for(int i  = 0; i < vector_size(words); i++){
+    int size = vector_size(words);
+    for(int i  = 0; i < size; i++){
         // tem que pensar se ali tem stopword
         String * word = vector_get(words, i);
         if(ST_get(stop_words, word) != NULL){ // se for stop word, ignora
@@ -102,7 +114,8 @@ void print_page(Page * page){
     printf("Page name:");
     string_print(page->name);
     printf("IN:");
-    for(int i = 0; i < vector_size(page->in_page); i++){
+    int size = vector_size(page->in_page);
+    for(int i = 0; i < size; i++){
         
         Page * p= vector_get(page->in_page, i);
         printf(" ");

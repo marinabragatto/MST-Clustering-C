@@ -1,3 +1,14 @@
+/**
+ * @file system.c
+ * @author Fabiola Meireles Vilaça - 2024102667
+ *         Marina Bragatto ... - 
+ * @brief 
+ * @version 0.1
+ * @date 2026-06-30
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
 #include "system.h"
 
 #include "vector.h"
@@ -32,7 +43,8 @@ void print_page_results(Vector * docs_answer){
     printf("pages:");
     if(docs_answer){
         vector_sort(docs_answer, page_compare);
-        for(int i = 0; i < vector_size(docs_answer); i++){
+        int size = vector_size(docs_answer);
+        for(int i = 0; i < size; i++){
             if(i > 0){
                 printf(" ");
             }
@@ -42,7 +54,8 @@ void print_page_results(Vector * docs_answer){
     printf("\n");
     printf("pr:");
     if(docs_answer){
-        for(int i = 0; i <  vector_size(docs_answer); i++){
+        int size = vector_size(docs_answer);
+        for(int i = 0; i < size; i++){
             if(i > 0){
                 printf(" ");
             }
@@ -78,7 +91,8 @@ static Vector * system_find_smaller_vector(System * sys, Vector * words){
     int idx_min = -1;
     Vector * min = NULL;
     
-   for(int j = 0; j < vector_size(words); j++){
+    int size = vector_size(words);
+    for(int j = 0; j < size; j++){
         String * w = vector_get(words, j); // palavra individual
         Vector * pages = ST_get(sys->term_list, w); // vetor de paginas associadas
         
@@ -117,7 +131,8 @@ static Vector * system_process_search(System * sys, Vector * words){
     if(smaller_vet){
         output = vector_create(vector_size(smaller_vet), NULL); // 
         // printf("smaller vet size : %d\n", vector_size(smaller_vet));
-        for(int i = 0; i < vector_size(smaller_vet); i ++){
+        int size = vector_size(smaller_vet);
+        for(int i = 0; i < size; i ++){
             // printf("entrei looping\n");
             // para cada documento, verificar se tem todos os termos da busca
             Page * page = vector_get(smaller_vet, i);

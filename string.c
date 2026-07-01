@@ -1,3 +1,14 @@
+/**
+ * @file string.c
+ * @author Fabiola Meireles Vilaça - 2024102667
+ *         Marina Bragatto ... - 
+ * @brief 
+ * @version 0.1
+ * @date 2026-06-30
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
 #include "string.h"
 #include <string.h>
 #include <stdlib.h>
@@ -33,8 +44,8 @@ char  string_get_character(String* string, int d){ // tem que verifcar se ta den
 }
 
 void string_tolower(String * string){
-
-    for(int i = 0; i < strlen(string) ; i++){
+    int len = strlen(string);
+    for(int i = 0; i < len; i++){
         string[i] = tolower((unsigned char)string[i]);
     }
 }
