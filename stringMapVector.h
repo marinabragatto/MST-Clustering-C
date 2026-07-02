@@ -53,6 +53,9 @@ void SMV_destroy(StringMapVector * smv);
  */
 Value SMV_get_by_idx(StringMapVector * smv, int idx);
 
+
+int SMV_get_idx_by_key(StringMapVector * smv, Key key);
+
 /**
  * @brief Obtém um elemento do mapeamento pela chave.
  * 

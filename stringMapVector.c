@@ -59,7 +59,12 @@ void SMV_destroy(StringMapVector * smv){
         free(smv);
     }
 }
-
+int SMV_get_idx_by_key(StringMapVector * smv, Key key){
+    int * idx_vet = ST_get(smv->string_idx, key);
+    if(idx_vet) 
+        return *idx_vet;
+    return -1;
+}
 Value SMV_get_by_idx(StringMapVector * smv, int idx){
     return vector_get(smv->vet, idx);
 }

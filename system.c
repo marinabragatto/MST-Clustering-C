@@ -171,15 +171,16 @@ static void pagerank_init(double *pr, int size) {
 }
 
 static int page_idx(StringMapVector *pages, Page *pj, int size){
-    int idx_j = -1; // indice no vetor original de paginas
-    for(int k = 0; k < size; k++){
-        if(SMV_get_by_idx(pages, k) == pj){
-            idx_j = k;
-            break;
-        }
-    }
+    // int idx_j = -1; // indice no vetor original de paginas
+    // for(int k = 0; k < size; k++){
+    //     if(SMV_get_by_idx(pages, k) == pj){
+    //         idx_j = k;
+    //         break;
+    //     }
+    // }
+    return SMV_get_idx_by_key(pages, page_get_name(pj));
 
-    return idx_j;
+    // return idx_j;
 }
 
 static double pagerank_sum(StringMapVector *pages, Vector *in, double *pr_prev, int sz_in, int size){
