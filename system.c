@@ -188,7 +188,9 @@ static double pagerank_sum(StringMapVector *pages, Vector *in, double *pr_prev, 
     for(int j = 0; j < sz_in; j++){
         Page* pj = vector_get(in, j);
         int idx_j = page_idx(pages, pj,size);
-        sum += pr_prev[idx_j] / page_get_out_number(pj);  // out_j > 0 sempre, nao precisa de verificao para a divisao
+        if(idx_j >= 0 && idx_j < size){
+            sum += pr_prev[idx_j] / page_get_out_number(pj);  // out_j > 0 sempre, nao precisa de verificao para a divisao
+        }
     }
 
     return sum;

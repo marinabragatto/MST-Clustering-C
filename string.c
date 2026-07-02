@@ -40,11 +40,17 @@ int string_get_len(String* string){
 }
 
 char * string_get_char_pointer(String* string, int d){ // tem que verifcar se ta dentro do len para nao fazer mem
-    return string + d;
+    if(d < string_get_len(string)){
+        return string + d;
+    }
+    return NULL;
 }
 
 char  string_get_character(String* string, int d){ // tem que verifcar se ta dentro do len para nao fazer mem
-    return string[d];
+    if(d < string_get_len(string)){
+        return string[d];
+    }
+    return NULL;
 }
 
 void string_tolower(String * string){
