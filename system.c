@@ -34,7 +34,12 @@ struct System{
     char * exist; /*Marcador de Existência*/
 };
 #define ALFA 0.85
+/* PAGE RANK */
+static void pagerank_init(double *pr, int size);
 static void page_rank_execute(StringMapVector * pages);
+static int page_idx(StringMapVector *pages, Page *pj, int size);
+static double pagerank_sum(StringMapVector *pages, Vector *in, double *pr_prev, int sz_in, int size);
+
 static Vector *  system_process_search(System * sys, Vector * words);
 static Vector * system_find_smaller_vector(System * sys, Vector * words);
 void print_page_results(Vector * docs_answer);
@@ -157,17 +162,45 @@ void system_execute(System * sys){
 }
 
 
+static void pagerank_init(double *pr, int size) {
+    //Inicialização. No passo zero, o PageRank de cada página é inicializado de maneira uniforme: 1/n
+    double initial = 1.0 / size; // evitar ficar repetindo a divisao no loop
+
+    for (int i = 0; i < size; i++)
+        pr[i] = initial;
+}
+
+static int page_idx(StringMapVector *pages, Page *pj, int size){
+    int idx_j = -1; // indice no vetor original de paginas
+    for(int k = 0; k < size; k++){
+        if(SMV_get_by_idx(pages, k) == pj){
+            idx_j = k;
+            break;
+        }
+    }
+
+    return idx_j;
+}
+
+static double pagerank_sum(StringMapVector *pages, Vector *in, double *pr_prev, int sz_in, int size){
+    double sum = 0.0;
+    for(int j = 0; j < sz_in; j++){
+        Page* pj = vector_get(in, j);
+        int idx_j = page_idx(pages, pj,size);
+        sum += pr_prev[idx_j] / page_get_out_number(pj);  // out_j > 0 sempre, nao precisa de verificao para a divisao
+    }
+
+    return sum;
+}
+
+
 static void page_rank_execute(StringMapVector * pages){
     int size = SMV_get_size(pages); // n (formula): número total de páginas/documentos;
     
     double* pr_prev = malloc(size * sizeof(double));
     double* pr_new = malloc(size * sizeof(double));
-
-    //Inicialização. No passo zero, o PageRank de cada página é inicializado de maneira uniforme: 1/n
-    double pr_initial = 1.0 / size; // evitar ficar repetindo a divisao no loop
-    for(int i = 0; i < size; i++){
-        pr_prev[i] = pr_initial;
-    }
+    pagerank_init(pr_prev, size);
+    
 
     // Laço de atualização. Na iteração k ≥ 1, o valor do PageRank é computado com base nos valores da iteração anterior:
     double fixed_value = (1.0 - ALFA) / size;
@@ -180,19 +213,8 @@ static void page_rank_execute(StringMapVector * pages){
             Vector* in = page_get_in_page(pi);
             int sz = vector_size(in);
 
-            double sum = 0.0;
-            for(int j = 0; j < sz; j++){
-                Page* pj = vector_get(in, j);
-                int idx_j = -1; // indice no vetor original de paginas
-                for(int k = 0; k < size; k++){
-                    if(SMV_get_by_idx(pages, k) == pj){
-                        idx_j = k;
-                        break;
-                    }
-                }
-                sum += pr_prev[idx_j] / page_get_out_number(pj);  // out_j > 0 sempre, nao precisa de verificao para a divisao
-            }
-
+            double sum = pagerank_sum(pages, in, pr_prev, sz, size);
+            
             if(page_get_out_number(pi) != 0){
                 pr_new[i] = fixed_value + ALFA * sum;
             }

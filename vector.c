@@ -11,8 +11,6 @@
  */
 #include "vector.h"
 
-#define TAM_MAX 10
-#define BLOCK 200
 
 struct Vector{
     void ** data;
@@ -25,8 +23,16 @@ struct Vector{
 
 Vector * vector_create(int max_size, destroy_func destroy){
     Vector * vet = (Vector *)malloc(sizeof(Vector));
+    if(vet == NULL){
+        perror("Erro ao realizar malloc");
+        exit(1);
+    }
 
     vet->data = (void**)calloc(max_size, sizeof(void*));
+    if(vet->data == NULL){
+        perror("Erro ao realizar malloc");
+        exit(1);
+    }
     vet->size = 0;
     vet->max = max_size;
     vet->destroy = destroy;
@@ -84,7 +90,7 @@ void vector_print(Vector * vet, print_func print){
 }
 
 void * vector_get(Vector * vet, int idx){
-    if(idx < vet->size)
+    if(idx < vet->size && idx >= 0)
         return vet->data[idx];
 
     return NULL;
@@ -116,9 +122,6 @@ int vector_compare_smaller(void * vet1, void * vet2){
 
 }
 
-
 void vector_sort(Vector* vet, compare_tosort_func compare){
-    //printf("chamando qsort\n"); // debug
     qsort(vet->data, vet->size, sizeof(void*), compare);
-    //printf("qsort finalizado\n"); // debug
 }

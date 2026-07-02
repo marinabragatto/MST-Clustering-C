@@ -15,12 +15,10 @@
 #include <stdlib.h>
 
 #include "utils.h"
-#define MAX_SIZE 30
+#define SEARCH_VECTOR_SZ 30
 
 struct Search{
-    // String * string; // talvez separar cada termo em uma string diferente
-    // acho que é melhor dividir em termos diferentes mesmo, ai podemos conferir se cada termo separadamente é uma stopword
-    Vector * words; // vetor de termos
+    Vector * words; /*Vetor de termos da busca*/
 };
 
 void search_process(Search * se);
@@ -29,7 +27,7 @@ void search_print(Search * se);
 
 Search * search_create(){
     Search * se = (Search*)malloc(sizeof(Search)); 
-    se->words = vector_create(MAX_SIZE, string_destroy); // mudar o nome de max_size
+    se->words = vector_create(SEARCH_VECTOR_SZ, string_destroy); 
 
     return se;
 }

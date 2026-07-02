@@ -36,7 +36,7 @@ Page * page_create(String * name);
  * @param page Página de referência.
  * @param page_in Páginas que estão apontando para a página atual.
  */
-void page_insert_in_file(Page * page, Page * page_in);
+void page_insert_in_page(Page * page, Page * page_in);
 
 /**
  * @brief Obtém o nome da página.
@@ -94,7 +94,7 @@ void print_page_v2(Page * page);
 void page_destroy(void * page);
 
 
-// PAGERANK
+/* FUNCOES RELACIONADAS AO PAGERANK */
 
 /**
  * @brief Define o valor do pageRank de uma página.
@@ -112,20 +112,21 @@ void page_set_pagerank(Page* page, double pr);
  */
 double page_get_pagerank(Page* page);
 
-// void page_rank_execute(StringMapVector* pages);
+/**
+ * @brief Obtém o vetor de Paginas In.
+ * 
+ * @param page Ponteiro para a página.
+ * @return Vector * contendo paginas que apontam para a Page passada como parâmetro.
+ */
 Vector* page_get_in_page(Page* page);
 
-int page_get_out_number(Page* page);
-
-
-// PAGERANK POR PAGINA
-
 /**
- * @brief Calcula o pagerank de um conjunto de páginas iterativamente.
+ * @brief Obtém Numero de Links de Saida.
  * 
- * @param pages Vetor contendo todas as páginas.
+ * @param page Ponteiro para a página.
+ * @return int Numero de Links de Saida da Pagina.
  */
-void page_calculate_pagerank(Vector* pages);
+int page_get_out_number(Page* page);
 
 /**
  * @brief Função de comparação para ordenação das páginas baseada na ordem decrescente de pagerank ou ordem alfabética.
@@ -136,6 +137,5 @@ void page_calculate_pagerank(Vector* pages);
  */
 int page_compare(const void* page1, const void* page2);
 
-//double page_get_pagerank(Page* page);
 
 #endif

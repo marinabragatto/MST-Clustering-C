@@ -10,13 +10,8 @@
  * 
  */
 
-// fazer tudo generico como indicado pelo prof
-// podemos fazer uma implementacao mais ok e no final do curso
-// como ele disse, vai ter a melhor estrutura para fazer 
-// um ST, acho que é tst?
 #include "simbolTable.h"
 #include <stdio.h>
-//#include "string.h"
 #include <ctype.h>
 #include <stdlib.h>
 
@@ -28,8 +23,8 @@
 typedef struct TST TST;
 
 struct TST{
-    //dados
-    Value val; // precisa?
+    /*dados*/
+    Value val; 
     unsigned char c;
     TST *l, *m, *r;
 };
@@ -58,13 +53,13 @@ ST * ST_init(){
     return st;
 }
 
-// essa funcao deveria ir pro tad string?
+// Essa funcao deveria ir pro tad string?
 int compare_character(unsigned char c1, unsigned char c2){
     return tolower(c1) - tolower(c2);
 }
 
 static TST * rec_put(TST * tst, String* key, Value val, int d, int * sucess){ 
-    unsigned char c = string_get_character(key, d); //key deveria ser do tipo string?
+    unsigned char c = string_get_character(key, d); 
     // st vazia
     if (tst == NULL){ 
         tst = new_node(c); 
@@ -99,7 +94,6 @@ int ST_PUT(ST * st, Key key, Value val){
     return sucess;
 }
 
-//Value ST_get(Key key){}
 
 static Value rec_search(TST * tst, String* key, int d){
     // st vazia
@@ -132,23 +126,17 @@ Value ST_get(ST * st, String * key){
 
 }
 
-//void ST_delete(Key key){} // vai precisar remover chave?
-
 bool ST_empty(ST* st){
     return st->tst == NULL;
 }
-
-//int ST_size(){}
 
 void rec_destroy(TST * tst, destroy_func destroy){
     if(tst != NULL){
         rec_destroy(tst->l, destroy);
         rec_destroy(tst->m, destroy);
         rec_destroy(tst->r, destroy);
-        // liberar value?
-        if(destroy){
+        if(destroy)
             destroy(tst->val);
-        }
         free(tst);
     }
 }
