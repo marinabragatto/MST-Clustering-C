@@ -1,4 +1,4 @@
-# mst-clustering
+# MST-Clustering-C
 
 A C implementation of max-spacing clustering using a minimum spanning tree (MST).
 
